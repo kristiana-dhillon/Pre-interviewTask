@@ -1,0 +1,231 @@
+1                                                          The SAS System                            17:06 Sunday, February 20, 2022
+
+1          ;*';*";*/;quit;run;
+2          OPTIONS PAGENO=MIN;
+3          %LET _CLIENTTASKLABEL='Dhillon_Pre-interview Task SAS Code.sas';
+4          %LET _CLIENTPROCESSFLOWNAME='Standalone Not In Project';
+5          %LET _CLIENTPROJECTPATH='';
+6          %LET _CLIENTPROJECTPATHHOST='';
+7          %LET _CLIENTPROJECTNAME='';
+8          %LET _SASPROGRAMFILE='C:\Users\kdhillo2\Documents\My SAS Files\9.4\Dhillon_Pre-interview Task SAS Code.sas';
+9          %LET _SASPROGRAMFILEHOST='5CG9045692';
+10         
+11         ODS _ALL_ CLOSE;
+12         OPTIONS DEV=SVG;
+13         GOPTIONS XPIXELS=0 YPIXELS=0;
+14         %macro HTML5AccessibleGraphSupported;
+15             %if %_SAS_VERCOMP_FV(9,4,4, 0,0,0) >= 0 %then ACCESSIBLE_GRAPH;
+16         %mend;
+17         FILENAME EGHTML TEMP;
+18         ODS HTML5(ID=EGHTML) FILE=EGHTML
+19             OPTIONS(BITMAP_MODE='INLINE')
+20             %HTML5AccessibleGraphSupported
+21             ENCODING='utf-8'
+22             STYLE=HTMLBlue
+23             NOGTITLE
+24             NOGFOOTNOTE
+25             GPATH=&sasworklocation
+26         ;
+NOTE: Writing HTML5(EGHTML) Body file: EGHTML
+27         
+28         /*Question 1
+29         
+30         How many samples are there that have failed the contamination check (confindr.contam_status.check_result)
+31         and have contamination (confindr.percentage_contamination.metric_value) of over 5.0 (%)?*/
+32         proc freq data=SASUSER.OXFORDDATA;
+33         tables 'confindr.contam_status.check_res'n;
+34         where 'confindr.percentage_contaminatio'n>5;
+35         run;
+
+NOTE: There were 57 observations read from the data set SASUSER.OXFORDDATA.
+      WHERE 'confindr.percentage_contaminatio'n>5;
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+36         /* There were 57 samples that failed the contamination check and had contamination of over 5.0%*/
+37         
+38         /* Question 2
+39         
+40         How many samples are there that have less than or equal to 50 contigs and a N50 value of greater than
+41         or equal to 750,000?*/
+42         proc freq data=SASUSER.OXFORDDATA;
+43         tables sample_name;
+44         where 'quast.# contigs (>= 1000 bp).met'n<=50 and 'quast.N50.metric_value'n>=750000;
+45         run;
+
+NOTE: There were 49 observations read from the data set SASUSER.OXFORDDATA.
+      WHERE ('quast.# contigs (>= 1000 bp).met'n<=50) and ('quast.N50.metric_value'n>=750000);
+NOTE: PROCEDURE FREQ used (Total process time):
+2                                                          The SAS System                            17:06 Sunday, February 20, 2022
+
+      real time           0.04 seconds
+      cpu time            0.03 seconds
+      
+
+46         /* There were 49 samples that have less than or equal to 50 contigs and a N50 value of greater than
+47         or equal to 750,000*/
+48         
+49         /* Question 3
+50         Select all numeric columns and rename them to remove the . quast prefix and . metric_ value suffix,
+51         and rename confindr .percentage_contamination to contamination_percent*/
+52         data SASUSER.OXFORDDATARENAMED;
+53         set SASUSER.OXFORDDATA (rename=('confindr.percentage_contaminatio'n='contamination_percent'n 'quast.# contigs (>= 1000
+53       ! bp).met'n='# contigs (>= 1000 bp)'n 'quast.N50.metric_value'n='N50'n 'quast.Total length (>= 1000 bp).'n='Total length
+53       ! (>= 1000 bp)'n));
+54         run;
+
+NOTE: There were 1000 observations read from the data set SASUSER.OXFORDDATA.
+NOTE: The data set SASUSER.OXFORDDATARENAMED has 1000 observations and 12 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+55         proc contents;
+56         run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.06 seconds
+      
+
+57         /* Question 4
+58         
+59         Make a box plot of Total length (>= 1000 bp)*/
+60         proc sgplot data=SASUSER.OXFORDDATARENAMED;
+61         vbox 'Total length (>= 1000 bp)'n;
+62         yaxis label='Total length (>=1000 bp)';
+63         run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           1.65 seconds
+      cpu time            0.15 seconds
+      
+NOTE: There were 1000 observations read from the data set SASUSER.OXFORDDATARENAMED.
+
+64         /* I changed the y axis label because it used the original label rather than the renamed variable */
+65         
+66         /* Question 5
+67         
+68         Pivot the data so that it is 'tidy' with one observation per row and have final column headings of
+69         sam­ple_name, metric, value */
+70         
+71         data SASUSER.OXFORDDATATIDY;
+72         set SASUSER.OXFORDDATARENAMED(drop='result'n 'confindr.contam_status.check_res'n 'confindr.percentage_contami_0001'n
+72       ! 'quast.# contigs (>= 1000 bp).che'n 'quast.N50.check_result'n 'quast.Total length (>= 1000_0001'n);
+73         run;
+
+NOTE: There were 1000 observations read from the data set SASUSER.OXFORDDATARENAMED.
+3                                                          The SAS System                            17:06 Sunday, February 20, 2022
+
+NOTE: The data set SASUSER.OXFORDDATATIDY has 1000 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+74         proc sort data=SASUSER.OXFORDDATATIDY out=SASUSER.OXFORDDATATIDY2;
+75         by 'sample_name'n;
+76         run;
+
+NOTE: There were 1000 observations read from the data set SASUSER.OXFORDDATATIDY.
+NOTE: The data set SASUSER.OXFORDDATATIDY2 has 1000 observations and 6 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+77         proc transpose data=SASUSER.OXFORDDATATIDY2
+78         out=SASUSER.OXFORDDATATIDY3 (rename=(Col1=value)) name=metric label=original_label;
+79         by 'sample_name'n;
+80         var 'confindr.contam_status.metric_va'n 'contamination_percent'n '# contigs (>= 1000 bp)'n 'n50'n 'Total length (>= 1000
+80       ! bp)'n;
+81         run;
+
+NOTE: Numeric variables in the input data set will be converted to character in the output data set.
+NOTE: There were 1000 observations read from the data set SASUSER.OXFORDDATATIDY2.
+NOTE: The data set SASUSER.OXFORDDATATIDY3 has 5000 observations and 4 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+82         data SASUSER.OXFORDDATATIDY4;
+83         set SASUSER.OXFORDDATATIDY3(drop=original_label);
+84         run;
+
+NOTE: There were 5000 observations read from the data set SASUSER.OXFORDDATATIDY3.
+NOTE: The data set SASUSER.OXFORDDATATIDY4 has 5000 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+85         /* See parts 1 and 2 for Question 5 in ppt. document*/
+86         
+87         /* Question 6
+88         
+89         Make a violin plot for each of the numeric variables in a single plot. Bonus: include jittered data points */
+90         ods select none;
+91         proc kde data=SASUSER.OXFORDDATATIDY2;
+92         univar 'Total length (>= 1000 bp)'n (gridl=1000 gridu=15000000) /
+93         NGRID=100 unistats percentiles plots=none
+94         out=sasuser.lengthDensity (rename=(value='Total length (>= 1000 bp)'n) drop=var);
+95         run;
+
+NOTE: Processing UNIVAR statement number 1.
+NOTE: The data set SASUSER.LENGTHDENSITY has 100 observations and 3 variables.
+NOTE: PROCEDURE KDE used (Total process time):
+4                                                          The SAS System                            17:06 Sunday, February 20, 2022
+
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+96         ods select all;
+97         data sasuser.lengthdensityplot;
+98         set sasuser.lengthDensity;
+99         mirror=-1*density;
+100        zero=0;
+101        run;
+
+NOTE: There were 100 observations read from the data set SASUSER.LENGTHDENSITY.
+NOTE: The data set SASUSER.LENGTHDENSITYPLOT has 100 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+102        proc sgplot data=sasuser.lengthdensityplot;
+103        band x='Total length (>= 1000 bp)'n upper=density lower=mirror /
+104        fill outline;
+105        xaxis label='Total length (>= 1000 bp) of Samples';
+106        yaxis display=none;
+107        run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           0.36 seconds
+      cpu time            0.07 seconds
+      
+NOTE: There were 100 observations read from the data set SASUSER.LENGTHDENSITYPLOT.
+
+108        /* I only did one violin plot because I ran out of time - view in ppt. document*/
+109        
+110        
+111        
+112        %LET _CLIENTTASKLABEL=;
+113        %LET _CLIENTPROCESSFLOWNAME=;
+114        %LET _CLIENTPROJECTPATH=;
+115        %LET _CLIENTPROJECTPATHHOST=;
+116        %LET _CLIENTPROJECTNAME=;
+117        %LET _SASPROGRAMFILE=;
+118        %LET _SASPROGRAMFILEHOST=;
+119        
+120        ;*';*";*/;quit;run;
+121        ODS _ALL_ CLOSE;
+122        
+123        
+124        QUIT; RUN;
+125        

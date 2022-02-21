@@ -1,0 +1,3214 @@
+﻿<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="SAS 9.4" name="generator"/>
+<title>SAS Output</title>
+<style>
+/*<![CDATA[*/
+.body.c > table, .body.c > pre, .body.c div > table,
+.body.c div > pre, .body.c > table, .body.c > pre,
+.body.j > table, .body.j > pre, .body.j div > table,
+.body.j div > pre, .body.j > table, .body.j > pre,
+.body.c p.note, .body.c p.warning, .body.c p.error, .body.c p.fatal,
+.body.j p.note, .body.j p.warning, .body.j p.error, .body.j p.fatal,
+.body.c > table.layoutcontainer, .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.layoutregion.l table, .layoutregion.l pre, .layoutregion.l p.note,
+.layoutregion.l p.warning, .layoutregion.l p.error, .layoutregion.l p.fatal { margin-left: 0 }
+.layoutregion.c table, .layoutregion.c pre, .layoutregion.c p.note,
+.layoutregion.c p.warning, .layoutregion.c p.error, .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r p.warning, .layoutregion.r p.error, .layoutregion.r p.fatal { margin-right: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block }
+html{ font-size: 100% }
+.body { margin: 1em; font-size: 13px; line-height: 1.231 }
+sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+ul, ol { margin: 1em 0; padding: 0 0 0 40px }
+dd { margin: 0 0 0 40px }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+img { border: 0; vertical-align: middle }
+svg:not(:root) { overflow: hidden }
+figure { margin: 0 }
+table { border-collapse: collapse; border-spacing: 0 }
+.layoutcontainer { border-collapse: separate; border-spacing: 0 }
+p { margin-top: 0; text-align: left }
+h1.heading1 { text-align: left }
+h2.heading2 { text-align: left }
+h3.heading3 { text-align: left }
+h4.heading4 { text-align: left }
+h5.heading5 { text-align: left }
+h6.heading6 { text-align: left }
+span { text-align: left }
+table { margin-bottom: 1em }
+td, th { text-align: left; padding: 3px 6px; vertical-align: top }
+td[class$="fixed"], th[class$="fixed"] { white-space: pre }
+section, article { padding-top: 1px; padding-bottom: 8px }
+hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.stacked-value { text-align: left; display: block }
+.stacked-cell > .stacked-value, td.data > td.data, th.data > td.data, th.data > th.data, td.data > th.data, th.header > th.header { border: 0 }
+.stacked-cell > div.data { border-width: 0 }
+.systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.systitleandfootercontainer > p { margin: 0 }
+.systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.batch { display: table }
+.toc { display: none }
+.proc_note_group, .proc_title_group { margin-bottom: 1em }
+p.proctitle { margin: 0 }
+p.note, p.warning, p.error, p.fatal { display: table }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner,
+.notecontent, .warncontent, .errorcontent, .fatalcontent { display: table-cell; padding: 0.5em }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner { padding-right: 0 }
+.body > div > ol li { text-align: left }
+.beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.c { text-align: center }
+.r { text-align: right }
+.l { text-align: left }
+.j { text-align: justify }
+.d { text-align: right }
+.b { vertical-align: bottom }
+.m { vertical-align: middle }
+.t { vertical-align: top }
+.accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+a:active { color: #800080 }
+.aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.batch > tbody, .batch > thead, .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.batch { border: hidden; }
+.batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.bylinecontainer > col, .bylinecontainer > colgroup > col, .bylinecontainer > colgroup, .bylinecontainer > tr, .bylinecontainer > * > tr, .bylinecontainer > thead, .bylinecontainer > tbody, .bylinecontainer > tfoot { border: none; }
+.bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.cell, .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.contentfolder, .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.contentproclabel, .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.data, .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.graph > tbody, .graph > thead, .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.graph { border: hidden; }
+.graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.heading1, .heading2, .heading3, .heading4, .heading5, .heading6 { font-family: Arial, Helvetica, sans-serif }
+.index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.indexaction, .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.layoutcontainer, .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+a:link { color: #0000ff }
+.list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.list3, .list4, .list5, .list6, .list7, .list8, .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.listitem3, .listitem4, .listitem5, .listitem6, .listitem7, .listitem8, .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.output > tbody, .output > thead, .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.output { border: hidden; }
+.output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.pagesproclabel, .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.parskip > col, .parskip > colgroup > col, .parskip > colgroup, .parskip > tr, .parskip > * > tr, .parskip > thead, .parskip > tbody, .parskip > tfoot { border: none; }
+.parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.systemfooter, .systemfooter10, .systemfooter2, .systemfooter3, .systemfooter4, .systemfooter5, .systemfooter6, .systemfooter7, .systemfooter8, .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.systemtitle, .systemtitle10, .systemtitle2, .systemtitle3, .systemtitle4, .systemtitle5, .systemtitle6, .systemtitle7, .systemtitle8, .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.systitleandfootercontainer > col, .systitleandfootercontainer > colgroup > col, .systitleandfootercontainer > colgroup, .systitleandfootercontainer > tr, .systitleandfootercontainer > * > tr, .systitleandfootercontainer > thead, .systitleandfootercontainer > tbody, .systitleandfootercontainer > tfoot { border: none; }
+.systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.table > col, .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.table > tr, .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.table { border: hidden; }
+.table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.titleandnotecontainer > col, .titleandnotecontainer > colgroup > col, .titleandnotecontainer > colgroup, .titleandnotecontainer > tr, .titleandnotecontainer > * > tr, .titleandnotecontainer > thead, .titleandnotecontainer > tbody, .titleandnotecontainer > tfoot { border: none; }
+.titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+a:visited { color: #800080 }
+.warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+</head>
+<body class="c body">
+<div style="padding-bottom: 8px; padding-top: 1px">
+<div id="IDX" class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+<div style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">confindr.contam_status.check_result</th>
+</tr>
+<tr>
+<th class="b header" scope="col">confindr.contam_status.check_res</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">FAILURE</th>
+<td class="r data">57</td>
+<td class="r data">100.00</td>
+<td class="r data">57</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+<hr class="pagebreak"/>
+<div id="IDX1" class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+<div style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="b header" scope="col">sample_name</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br/>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br/>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">G18001331</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18001377</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">2</td>
+<td class="r data">4.08</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18001391</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">3</td>
+<td class="r data">6.12</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18001414</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">4</td>
+<td class="r data">8.16</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18001416</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">5</td>
+<td class="r data">10.20</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18001442</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">6</td>
+<td class="r data">12.24</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18001448</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">7</td>
+<td class="r data">14.29</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18001541</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">8</td>
+<td class="r data">16.33</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18001637</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">9</td>
+<td class="r data">18.37</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18001660</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">10</td>
+<td class="r data">20.41</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18001750</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">11</td>
+<td class="r data">22.45</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18001918</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">12</td>
+<td class="r data">24.49</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18002148</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">13</td>
+<td class="r data">26.53</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18002155</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">14</td>
+<td class="r data">28.57</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18002296</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">15</td>
+<td class="r data">30.61</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18002310</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">16</td>
+<td class="r data">32.65</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18002358</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">17</td>
+<td class="r data">34.69</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18002402</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">18</td>
+<td class="r data">36.73</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18002468</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">19</td>
+<td class="r data">38.78</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18002481</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">20</td>
+<td class="r data">40.82</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18002501</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">21</td>
+<td class="r data">42.86</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18002503</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">22</td>
+<td class="r data">44.90</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18002513</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">23</td>
+<td class="r data">46.94</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18250115</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">24</td>
+<td class="r data">48.98</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18754344</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">25</td>
+<td class="r data">51.02</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18760094</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">26</td>
+<td class="r data">53.06</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18760857</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">27</td>
+<td class="r data">55.10</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18761161</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">28</td>
+<td class="r data">57.14</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G18761647</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">29</td>
+<td class="r data">59.18</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000010</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">30</td>
+<td class="r data">61.22</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000041</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">31</td>
+<td class="r data">63.27</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000064</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">32</td>
+<td class="r data">65.31</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000428</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">33</td>
+<td class="r data">67.35</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000448</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">34</td>
+<td class="r data">69.39</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000451</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">35</td>
+<td class="r data">71.43</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000454</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">36</td>
+<td class="r data">73.47</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000476</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">37</td>
+<td class="r data">75.51</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000505</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">38</td>
+<td class="r data">77.55</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000508</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">39</td>
+<td class="r data">79.59</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000543</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">40</td>
+<td class="r data">81.63</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000546</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">41</td>
+<td class="r data">83.67</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000547</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">42</td>
+<td class="r data">85.71</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000548</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">43</td>
+<td class="r data">87.76</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000570</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">44</td>
+<td class="r data">89.80</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000612</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">45</td>
+<td class="r data">91.84</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000613</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">46</td>
+<td class="r data">93.88</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000630</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">47</td>
+<td class="r data">95.92</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000664</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">48</td>
+<td class="r data">97.96</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">G20000680</th>
+<td class="r data">1</td>
+<td class="r data">2.04</td>
+<td class="r data">49</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+<hr class="pagebreak"/>
+<div id="IDX2" class="proc_title_group">
+<p class="c proctitle">The CONTENTS Procedure</p>
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+<div style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Attributes">
+<caption aria-label="Attributes"></caption>
+<colgroup><col/><col/><col/><col/></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Name</th>
+<td class="data">SASUSER.OXFORDDATARENAMED</td>
+<th class="rowheader" scope="row">Observations</th>
+<td class="data">1000</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Member Type</th>
+<td class="data">DATA</td>
+<th class="rowheader" scope="row">Variables</th>
+<td class="data">12</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Engine</th>
+<td class="data">V9</td>
+<th class="rowheader" scope="row">Indexes</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Created</th>
+<td class="data">02/20/2022 17:06:24</td>
+<th class="rowheader" scope="row">Observation Length</th>
+<td class="data">88</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Last Modified</th>
+<td class="data">02/20/2022 17:06:24</td>
+<th class="rowheader" scope="row">Deleted Observations</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protection</th>
+<td class="data">&#160;</td>
+<th class="rowheader" scope="row">Compressed</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Set Type</th>
+<td class="data">&#160;</td>
+<th class="rowheader" scope="row">Sorted</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Label</th>
+<td class="data">&#160;</td>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Representation</th>
+<td class="data">WINDOWS_64</td>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Encoding</th>
+<td class="data">wlatin1  Western (Windows)</td>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="data">&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX3" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Engine/Host Information">
+<caption aria-label="Engine/Host Information"></caption>
+<colgroup><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Engine/Host Dependent Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Page Size</th>
+<td class="data">65536</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Pages</th>
+<td class="data">2</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">First Data Page</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Max Obs per Page</th>
+<td class="data">743</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Obs in First Data Page</th>
+<td class="data">711</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Repairs</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">ExtendObsCounter</th>
+<td class="data">YES</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Filename</th>
+<td class="data">C:\Users\kdhillo2\Documents\My SAS Files\9.4\oxforddatarenamed.sas7bdat</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Release Created</th>
+<td class="data">9.0401M6</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Host Created</th>
+<td class="data">X64_10PRO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Owner Name</th>
+<td class="data">CDPHINTRA\KDhillo2</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size</th>
+<td class="data">192KB</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size (bytes)</th>
+<td class="data">196608</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX4" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Variables">
+<caption aria-label="Variables"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="7" scope="colgroup">Alphabetic List of Variables and Attributes</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">#</th>
+<th class="b header" scope="col">Variable</th>
+<th class="b header" scope="col">Type</th>
+<th class="r b header" scope="col">Len</th>
+<th class="b header" scope="col">Format</th>
+<th class="b header" scope="col">Informat</th>
+<th class="b header" scope="col">Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="data"># contigs (&gt;= 1000 bp)</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST4.</td>
+<td class="data">BEST4.</td>
+<td class="data">quast.# contigs (&gt;= 1000 bp).metric_value</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="data">N50</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST7.</td>
+<td class="data">BEST7.</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="data">Total length (&gt;= 1000 bp)</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST8.</td>
+<td class="data">BEST8.</td>
+<td class="data">quast.Total length (&gt;= 1000 bp).metric_value</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="data">confindr.contam_status.check_res</td>
+<td class="data">Char</td>
+<td class="r data">7</td>
+<td class="data">$CHAR7.</td>
+<td class="data">$CHAR7.</td>
+<td class="data">confindr.contam_status.check_result</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="data">confindr.contam_status.metric_va</td>
+<td class="data">Char</td>
+<td class="r data">5</td>
+<td class="data">$CHAR5.</td>
+<td class="data">$CHAR5.</td>
+<td class="data">confindr.contam_status.metric_value</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="data">confindr.percentage_contami_0001</td>
+<td class="data">Char</td>
+<td class="r data">7</td>
+<td class="data">$CHAR7.</td>
+<td class="data">$CHAR7.</td>
+<td class="data">confindr.percentage_contamination.check_result</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="data">contamination_percent</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST5.</td>
+<td class="data">BEST5.</td>
+<td class="data">confindr.percentage_contamination.metric_value</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="data">quast.# contigs (&gt;= 1000 bp).che</td>
+<td class="data">Char</td>
+<td class="r data">7</td>
+<td class="data">$CHAR7.</td>
+<td class="data">$CHAR7.</td>
+<td class="data">quast.# contigs (&gt;= 1000 bp).check_result</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="data">quast.N50.check_result</td>
+<td class="data">Char</td>
+<td class="r data">7</td>
+<td class="data">$CHAR7.</td>
+<td class="data">$CHAR7.</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="data">quast.Total length (&gt;= 1000_0001</td>
+<td class="data">Char</td>
+<td class="r data">7</td>
+<td class="data">$CHAR7.</td>
+<td class="data">$CHAR7.</td>
+<td class="data">quast.Total length (&gt;= 1000 bp).check_result</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="data">result</td>
+<td class="data">Char</td>
+<td class="r data">7</td>
+<td class="data">$CHAR7.</td>
+<td class="data">$CHAR7.</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="data">sample_name</td>
+<td class="data">Char</td>
+<td class="r data">9</td>
+<td class="data">$CHAR9.</td>
+<td class="data">$CHAR9.</td>
+<td class="data">&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+<hr class="pagebreak"/>
+<div id="IDX5" style="padding-bottom: 8px; padding-top: 1px">
+<div class="c">
+<script type="text/ecmascript">
+var SVG_IDX5_SVGRoot = null;
+var SVG_IDX5_TrueCoords = null;
+var SVG_IDX5_singleTip = null;
+var SVG_IDX5_singleBox = null;
+var SVG_IDX5_singleText = null;
+var SVG_IDX5_tiptspan = null;
+var SVG_IDX5_attrScale = 1;
+var SVG_IDX5_rightEdge = null;
+var SVG_IDX5_SVGHeight = null;
+var SVG_IDX5_SVGWidth = null;
+function SVG_IDX5_Init(anchor) {
+   SVG_IDX5_SVGRoot = document.getElementById(anchor);
+   SVG_IDX5_TrueCoords = SVG_IDX5_SVGRoot.createSVGPoint();
+   SVG_IDX5_singleTip = document.getElementById(anchor + '_singleTip1');
+   SVG_IDX5_singleBox = document.getElementById(anchor + '_singleBox1');
+   SVG_IDX5_singleText = document.getElementById(anchor + '_singleText1');
+   SVG_IDX5_tiptspan = document.getElementById(anchor + '_tiptspan1');
+   SVG_IDX5_tiptspan.firstChild.nodeValue = null;
+   SVG_IDX5_SVGRoot.addEventListener('mousemove', SVG_IDX5_ShowTooltip, false);
+   SVG_IDX5_SVGRoot.addEventListener('mouseout', SVG_IDX5_HideTooltip, false);
+   SVG_IDX5_SVGHeight = SVG_IDX5_SVGRoot.getAttributeNS(null, "height");
+   SVG_IDX5_SVGWidth = SVG_IDX5_SVGRoot.getAttributeNS(null, "width");
+   if (!isNaN(parseFloat(SVG_IDX5_SVGHeight)) && !isNaN(parseFloat(SVG_IDX5_SVGWidth)))
+      SVG_IDX5_GetHW();
+}
+function SVG_IDX5_GetHW()
+{
+    if (SVG_IDX5_SVGWidth != null && SVG_IDX5_SVGWidth != "") {
+       if (SVG_IDX5_SVGWidth.match(/%/)) {
+          var factor = parseFloat(SVG_IDX5_SVGWidth.replace(/%/,""))/100;
+          SVG_IDX5_SVGWidth = window.innerWidth * factor;
+       }
+       else if (SVG_IDX5_SVGWidth.match(/in/))
+          SVG_IDX5_SVGWidth = parseFloat(SVG_IDX5_SVGWidth.replace(/in/,""))*96;
+       else if (SVG_IDX5_SVGWidth.match(/cm/))
+          SVG_IDX5_SVGWidth = parseFloat(SVG_IDX5_SVGWidth.replace(/in/,""))*96/2.54;
+       else
+           SVG_IDX5_SVGWidth = parseFloat(SVG_IDX5_SVGWidth);
+    }
+    if (SVG_IDX5_SVGHeight != null && SVG_IDX5_SVGHeight != "") {
+       if (SVG_IDX5_SVGHeight.match(/%/)) {
+          var factor = parseFloat(SVG_IDX5_SVGHeight.replace(/%/,""))/100;
+          SVG_IDX5_SVGHeight = window.innerHeight * factor;
+       }
+       else if (SVG_IDX5_SVGHeight.match(/in/))
+          SVG_IDX5_SVGHeight = parseFloat(SVG_IDX5_SVGHeight.replace(/in/,""))*96;
+       else if (SVG_IDX5_SVGHeight.match(/cm/))
+          SVG_IDX5_SVGHeight = parseFloat(SVG_IDX5_SVGHeight.replace(/in/,""))*96/2.54;
+       else
+           SVG_IDX5_SVGHeight = parseFloat(SVG_IDX5_SVGHeight);
+    }
+}
+function SVG_IDX5_GetScaleFactors(evt)
+{
+   var zoomFactor = 1;
+   windowWidth  = (top.innerWidth==undefined)  ? window.innerWidth  : top.innerWidth;
+   windowHeight = (top.innerHeight==undefined) ? window.innerHeight : top.innerHeight;
+   SVG_IDX5_rightEdge = (SVG_IDX5_SVGWidth) ? SVG_IDX5_SVGWidth - window.pageXOffset : windowWidth;
+   if (parseFloat(SVG_IDX5_SVGWidth) > 0 || parseFloat(SVG_IDX5_SVGHeight) > 0)
+      var tipScale = 1.875;
+   else {
+      var tipXScale  = (screen.width/windowWidth) / SVG_IDX5_SVGRoot.currentScale;
+      var tipYScale  = (screen.height/windowHeight) / SVG_IDX5_SVGRoot.currentScale;
+      var tipScale   = (tipXScale + tipYScale)/2.0;
+   }
+   SVG_IDX5_attrScale = tipScale;
+   if (navigator.appName == 'Adobe SVG Viewer') {
+      if (screen.deviceXDPI != null && screen.logicalXDPI != null)
+         zoomFactor = screen.deviceXDPI/screen.logicalXDPI;
+      SVG_IDX5_attrScale = zoomFactor*tipScale;
+   }
+   else if (navigator.userAgent != null && navigator.userAgent != '') {
+      var ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf("msie") != -1 || ua.indexOf("trident") != -1) {
+         zoomFactor = screen.deviceXDPI/screen.logicalXDPI;
+         SVG_IDX5_attrScale = tipScale/zoomFactor;
+         SVG_IDX5_rightEdge /= zoomFactor;
+      }
+      else if (ua.indexOf("ipad") != -1) {
+         zoomFactor = SVG_IDX5_SVGRoot.clientWidth / window.innerWidth;
+         SVG_IDX5_attrScale = 1.5 / zoomFactor;
+         SVG_IDX5_rightEdge /= zoomFactor;
+      }
+      else if (ua.indexOf("opera") != -1)
+         SVG_IDX5_attrScale = tipScale;
+      else if (ua.indexOf("firefox") != -1)
+         SVG_IDX5_attrScale = tipScale;
+      else {
+         if (SVG_IDX5_SVGWidth > 0 || SVG_IDX5_SVGHeight > 0)
+            zoomFactor = 1;
+         else
+            zoomFactor = parseInt(document.defaultView.getComputedStyle(SVG_IDX5_SVGRoot, null).width,10)/
+                                  SVG_IDX5_SVGRoot.clientWidth;
+         SVG_IDX5_attrScale = tipScale/zoomFactor;
+         SVG_IDX5_rightEdge *= zoomFactor;
+      }
+   }
+}
+function SVG_IDX5_GetTrueCoords(evt)
+{
+   var trans = SVG_IDX5_SVGRoot.currentTranslate;
+   var scale = SVG_IDX5_SVGRoot.currentScale;
+   SVG_IDX5_GetScaleFactors();
+   var p1    = SVG_IDX5_SVGRoot.createSVGPoint();
+   var p2;
+      var m = SVG_IDX5_SVGRoot.getScreenCTM();
+      if (navigator.userAgent.toLowerCase().indexOf("ipad") != -1) {
+         p1.x = evt.clientX + window.pageXOffset;
+         p1.y = evt.clientY + window.pageYOffset;
+      }
+      else {
+      p1.x = evt.clientX;
+      p1.y = evt.clientY;
+      }
+      p2 = p1.matrixTransform(m.inverse());
+   SVG_IDX5_TrueCoords.x = Math.round(p2.x*100) / 100;
+   SVG_IDX5_TrueCoords.y = Math.round(p2.y*100) / 100;
+}
+function SVG_IDX5_HideTooltip( evt )
+{
+   SVG_IDX5_tiptspan.firstChild.nodeValue = null;
+   SVG_IDX5_singleTip.setAttributeNS(null, 'visibility', 'hidden');
+}
+function SVG_IDX5_ShowTooltip( evt )
+{
+   SVG_IDX5_GetTrueCoords( evt );
+   var targetElement = evt.target;
+   var tspanCount = targetElement.getElementsByTagName('desc').length;
+   if (tspanCount == 1) {
+      var targetTspan = targetElement.getElementsByTagName('desc').item(0);
+      if ( targetTspan) {
+         if (targetTspan.firstChild != null)
+            SVG_IDX5_tiptspan.firstChild.nodeValue = targetTspan.firstChild.nodeValue; }
+   }
+   if ( '' != SVG_IDX5_tiptspan.firstChild.nodeValue )
+   {
+      var outline = SVG_IDX5_singleText.getBBox();
+      SVG_IDX5_singleBox.setAttributeNS(null, 'transform', 'scale(' + SVG_IDX5_attrScale + ',' + SVG_IDX5_attrScale + ')' );
+      SVG_IDX5_singleText.setAttributeNS(null, 'transform', 'scale(' + SVG_IDX5_attrScale + ',' + SVG_IDX5_attrScale + ')' );
+      SVG_IDX5_singleTip.setAttributeNS(null, 'visibility', 'visible');
+      if (evt.clientX + ((outline.width + 8)/0.8) * SVG_IDX5_attrScale > SVG_IDX5_rightEdge) {
+         var xPos = SVG_IDX5_TrueCoords.x - parseInt((outline.width + 8)*SVG_IDX5_attrScale);
+         if (xPos < 0)
+            xPos = 0;
+      }
+      else
+         var xPos = SVG_IDX5_TrueCoords.x;
+      if (SVG_IDX5_TrueCoords.y < 16) {
+         var yPos = SVG_IDX5_TrueCoords.y + ((outline.height + 16)/0.8)*SVG_IDX5_attrScale;
+         if (yPos > windowHeight)
+            yPos = SVG_IDX5_TrueCoords.y - parseInt((outline.height + 8)*SVG_IDX5_attrScale);
+      }
+      else
+         var yPos = SVG_IDX5_TrueCoords.y - parseInt((outline.height + 8)*SVG_IDX5_attrScale);
+      if (Number(outline.width == 0))
+         SVG_IDX5_singleBox.setAttributeNS(null, 'width', outline.width);
+      else
+         SVG_IDX5_singleBox.setAttributeNS(null, 'width', outline.width + 8);
+      SVG_IDX5_singleBox.setAttributeNS(null, 'height', outline.height + 8);
+      SVG_IDX5_singleTip.setAttributeNS(null, 'transform', 'translate(' + xPos + ',' + yPos + ')');
+   }
+}
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" baseProfile="full" version="1.1" id="SVG_IDX5" onload='SVG_IDX5_Init("SVG_IDX5")' viewBox="-1 -1 641 481" height="480" width="640">
+<desc id="desc_SVG_IDX5">The SGPlot Procedure</desc>
+<defs>
+<clipPath id="SVG_IDX5_clipPage1">
+<rect x="-1" y="-1" width="641" height="481"></rect>
+</clipPath>
+</defs>
+<g id="SVG_IDX5_Page1" clip-path="url(#SVG_IDX5_clipPage1)">
+<g transform=" scale(1, 1)">
+<rect x="0" y="0" width="639" height="479" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="0" width="639" height="479" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="0" width="639" height="479" style="stroke: #D1D1D1; stroke-width: 1; fill: none; "></rect>
+<g transform="matrix(1, 0, 0, 1, 11, 11)">
+<defs>
+<clipPath id="SVG_IDX5_ClipPath0">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX5_ClipPath0)">
+<defs>
+<clipPath id="SVG_IDX5_ClipPath1">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX5_ClipPath1)">
+<rect x="95.34571" y="0" width="521.1567" height="457.00217" style="fill: #FFFFFF; "></rect>
+<defs>
+<clipPath id="SVG_IDX5_ClipPath2">
+<rect x="94" y="-1" width="524" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX5_ClipPath2)">
+<path d="M277.8504 412.9071L277.8504 387.17852L433.99774 387.17852L433.99774 412.9071Z" style="fill: #CAD5E5; fill-rule: evenodd; "></path>
+<path d="M277.8504 412.9071L277.8504 387.17852L433.99774 387.17852L433.99774 412.9071L277.8504 412.9071Z" style="stroke: #000000; stroke-width: 1; fill: none; "></path>
+<path d="M277.8504 397.93877L433.99773 397.93877" style="stroke: #003399; stroke-width: 1; fill: none; "></path>
+<path d="M350.92407 390.50329L355.92407 385.50329L360.92407 390.50329L355.92407 395.50329Z" style="stroke: #003399; stroke-width: 1; fill: none; stroke-linecap: square; "></path>
+<path d="M355.92407 412.90709L355.92407 445.86883" style="stroke: #003399; stroke-width: 1; fill: none; "></path>
+<path d="M355.92407 387.17852L355.92407 349.59057" style="stroke: #003399; stroke-width: 1; fill: none; "></path>
+<path d="M316.88723 445.86883L394.9609 445.86883" style="stroke: #003399; stroke-width: 1; fill: none; "></path>
+<path d="M316.88723 349.59057L394.9609 349.59057" style="stroke: #003399; stroke-width: 1; fill: none; "></path>
+<circle cx="355.92407" cy="35.14402" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="62.11735" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="75.95253" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="79.98167" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="81.8016" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="84.31835" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="84.56087" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="90.14899" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="91.35794" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="92.82555" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="99.3845" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="101.75752" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="104.7599" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="104.92816" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="110.88958" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="113.44908" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="128.83397" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="130.26552" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="130.62213" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="135.25841" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="138.1271" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="146.06299" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="146.17341" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="147.93754" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="158.3943" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="160.77308" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="166.53884" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="169.59754" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="183.46027" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="184.17272" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="190.35316" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="191.00207" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="191.82538" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="194.18967" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="220.88427" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="235.02859" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="241.64801" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="253.67402" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="261.8285" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="295.13813" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="320.87967" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="326.16513" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="327.593" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="336.84695" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="341.11152" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="344.85358" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="347.26924" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="347.92506" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+<circle cx="355.92407" cy="348.11539" r="3" style="stroke: #000000; stroke-width: 1; fill: none; stroke-linecap: square; "></circle>
+</g>
+<defs>
+<clipPath id="SVG_IDX5_ClipPath3">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX5_ClipPath3)">
+<path d="M94.84652 457.00217L617.00161 457.00217" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M617.00161 457.00217L617.00161 0" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M94.84652 0L617.00161 0" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M94.84652 457.00217L94.84652 0" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M94.84652 457.00217L94.84652 0" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M94.84652 448.02178L89.24336 448.02178" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 36.74139, 452.02178)">
+<text textLength="49" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX5_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000036;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<path d="M94.84652 338.26143L89.24336 338.26143" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 36.74139, 342.26143)">
+<text textLength="49" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX5_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000038;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<path d="M94.84652 228.50108L89.24336 228.50108" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.74139, 232.50108)">
+<text textLength="56" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX5_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<path d="M94.84652 118.74074L89.24336 118.74074" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.74139, 122.74074)">
+<text textLength="56" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX5_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x000032;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<path d="M94.84652 8.98039L89.24336 8.98039" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 29.74139, 12.98039)">
+<text textLength="56" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX5_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x000034;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 12.73348, 299.50108)">
+<text textLength="142" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX5_Arial Font3', 'Arial', sans-serif; font-size: 13px; white-space: pre; ">&#x000054;&#x00006F;&#x000074;&#x000061;&#x00006C;&#x000020;&#x00006C;&#x000065;&#x00006E;&#x000067;&#x000074;&#x000068;&#x000020;&#x000028;&#x00003E;&#x00003D;&#x000031;&#x000030;&#x000030;&#x000030;&#x000020;&#x000062;&#x000070;&#x000029;</text>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="SVG_IDX5_ClipPath4">
+<rect x="94" y="-1" width="524" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX5_ClipPath4)">
+</g>
+<defs>
+<clipPath id="SVG_IDX5_ClipPath5">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX5_ClipPath5)">
+</g>
+</g>
+</g>
+<rect x="0" y="0" width="640" height="480" fill="#FFFFFF" fill-opacity="0" aria-hidden="true">
+<desc>The SGPlot Procedure</desc>
+</rect>
+</g>
+<g id="SVG_IDX5_singleTip1" visibility="hidden" pointer-events="none">
+   <rect id="SVG_IDX5_singleBox1" x="0" y="0" width="88" height="20" rx="2" ry="2" fill="white" stroke="black" stroke-width="0.8" opacity="0.8"></rect>
+   <text id="SVG_IDX5_singleText1" x="5" y="8" font-family="'Albany AMT', sans-serif" font-size="6"><tspan id="SVG_IDX5_tiptspan1" x="4" class="tiptext"><![CDATA[ ]]></tspan></text>
+</g>
+<defs>
+<style type="text/css"><![CDATA[
+    tspan.tiptext { white-space: pre }
+]]></style>
+</defs>
+<defs>
+<style type="text/css"><![CDATA[
+  @font-face {
+      font-family: "SVG_IDX5_Arial Font3";
+      src: url("#SVG_IDX5_Font3") format("svg")
+      }
+]]></style>
+<font id="SVG_IDX5_Font3" horiz-adv-x="6144" >
+   <font-face      font-family="SVG_IDX5_Arial Font3"
+    units-per-em="2048" ascent="1854" descent="-434" >
+      <font-face-src>
+         <font-face-name name="SVG_IDX5_Arial Font3"></font-face-name>
+      </font-face-src>
+   </font-face>
+<missing-glyph><path d="M0 0v4992h3456v-4992h-3456" fill="none"></path>
+</missing-glyph>
+<glyph unicode="&#40;" horiz-adv-x="680" 
+d="M469 -426Q326 -238 227 12 T128 534Q128 772 202 990 Q288 1242 469 1493 L597 
+1493Q476 1285 437 1196 Q376 1058 341 908 Q298 722 298 533 Q298 52 597 -426 Z" ></glyph>
+<glyph unicode="&#47;" horiz-adv-x="552" 
+d="M0 0L426 1493L602 1493L175 0L0 0Z" ></glyph>
+<glyph unicode="&#104;" horiz-adv-x="1147" 
+d="M128 0L128 1493L298 1493L298 991Q432 1152 635 1152 Q760 1152 852 1102 T984 
+966T1024 714L1024 0L853 0L853 709Q853 852 789 916 T607 981Q519 981 
+441 937 T331 819T298 612L298 0L128 0Z" ></glyph>
+<glyph unicode="&#65;" horiz-adv-x="1360" 
+d="M-8 0L590 1493L732 1493L1331 0L1152 0L978 469L344 469L170 0L-8 
+0ZM408 640L914 640L776 1012Q708 1198 661 1322 Q608 1180 556 1041 Z" ></glyph>
+<glyph unicode="&#103;" horiz-adv-x="1147" 
+d="M128 -85L298 -128Q310 -190 361 -218 Q429 -256 548 -256 Q676 -256 745 -210 T
+840 -82Q854 -32 853 128 Q732 0 553 0 Q330 0 207 167 T85 569Q85 730 
+140 867 T299 1077T544 1152Q731 1152 853 981 L853 1109L1024 1109L1024 164Q1024 
+-90 973 -196 T814 -365T546 -426Q356 -426 240 -341 T128 -85ZM256 583Q256 368 
+341 269 T554 170Q681 170 767 269 T853 577Q853 777 764 879 T551 981Q428 
+981 342 881 T256 583Z" ></glyph>
+<glyph unicode="&#54;" horiz-adv-x="1147" 
+d="M1024 1109L853 1109Q827 1207 778 1251 Q698 1322 581 1322 Q487 1322 394 1278 Q
+322 1222 269 1113 T213 786Q283 885 385 933 T598 981Q793 981 929 848 T1066 
+504Q1066 364 1003 245 T830 63T581 0Q343 0 193 165 T42 709Q42 1133 206 
+1326 Q348 1493 590 1493 Q770 1493 886 1391 T1024 1109ZM213 507Q213 418 260 337 T
+380 213T567 170Q723 170 809 258 T896 498Q896 643 811 727 T558 810Q414 
+810 314 727 T213 507Z" ></glyph>
+<glyph unicode="&#48;" horiz-adv-x="1147" 
+d="M85 746Q85 1005 140 1174 T303 1418T576 1493Q697 1493 799 1446 T950 1309T1032 
+1091T1066 746Q1066 488 1012 320 T849 75T576 0Q358 0 234 130 Q85 334 
+85 746ZM256 746Q256 378 348 274 T576 170Q711 170 803 275 T896 746Q896 
+1094 809 1208 T574 1322Q438 1322 346 1222 Q256 1093 256 746Z" ></glyph>
+<glyph unicode="&#56;" horiz-adv-x="1147" 
+d="M340 816Q232 857 180 933 T128 1115Q128 1275 249 1384 T573 1493Q776 1493 900 
+1381 T1024 1110Q1024 1008 972 932 T817 816Q939 772 1002 674 T1066 442Q1066 254 
+931 127 T576 0Q355 0 220 128 T85 446Q85 589 151 685 T340 816ZM298 1114Q
+298 1018 365 957 T578 896Q720 896 787 956 T853 1105Q853 1197 784 1260 T576 
+1322Q435 1322 367 1261 T298 1114ZM256 450Q256 378 284 311 T400 207T577 170Q
+737 170 816 248 T896 445Q896 566 814 646 T571 725Q414 725 335 647 T256 
+450Z" ></glyph>
+<glyph unicode="&#49;" horiz-adv-x="1147" 
+d="M768 0L597 0L597 1163Q528 1100 415 1037 T213 943L213 1120Q372 1192 490 
+1294 T658 1493L768 1493L768 0Z" ></glyph>
+<glyph unicode="&#50;" horiz-adv-x="1147" 
+d="M1024 170L1024 0L42 0Q40 64 66 124 Q106 222 196 313 T435 517Q667 
+722 760 838 T853 1066Q853 1174 772 1248 T560 1322Q422 1322 340 1243 T256 1024L
+85 1066Q104 1274 229 1384 T564 1493Q776 1493 900 1373 T1024 1075Q1024 984 987 
+897 T865 714T594 452Q430 316 380 268 T299 170Z" ></glyph>
+<glyph unicode="&#52;" horiz-adv-x="1147" 
+d="M725 0L725 341L42 341L42 512L768 1493L896 1493L896 512L1066 512L1066 
+341L896 341L896 0L725 0ZM725 512L725 1163L244 512L725 512Z" ></glyph>
+<glyph unicode="&#84;" horiz-adv-x="1190" 
+d="M512 0L512 1322L42 1322L42 1493L1152 1493L1152 1322L682 1322L682 0L512 
+0Z" ></glyph>
+<glyph unicode="&#111;" horiz-adv-x="1147" 
+d="M85 576Q85 882 247 1029 Q382 1152 576 1152 Q792 1152 929 1003 T1066 591Q1066 
+378 1005 256 T829 67T576 0Q356 0 220 148 T85 576ZM256 576Q256 373 347 
+272 T576 170Q714 170 805 272 T896 582Q896 778 804 880 T576 981Q438 981 
+347 880 T256 576Z" ></glyph>
+<glyph unicode="&#116;" horiz-adv-x="552" 
+d="M512 175L554 16Q479 0 419 0 Q322 0 268 31 T192 112T170 326L170 938L
+42 938L42 1109L170 1109L170 1372L341 1480L341 1109L512 1109L512 938L341 
+938L341 318Q341 240 350 218 T379 183T437 170Q466 170 512 175Z" ></glyph>
+<glyph unicode="&#97;" horiz-adv-x="1147" 
+d="M853 128Q759 58 664 29 T459 0Q279 0 182 89 T85 316Q85 396 122 463 T
+218 571T352 632Q408 647 518 660 Q745 688 852 725 Q853 761 853 771 Q853 
+878 800 922 Q728 981 586 981 Q454 981 391 934 T298 768L128 810Q152 928 
+207 1001 T367 1113T610 1152Q747 1152 832 1118 T958 1032T1014 903Q1024 854 1024 
+734 L1024 495Q1024 245 1032 161 T1066 0L896 0Q862 54 853 128ZM853 554Q
+746 518 532 492 Q411 477 361 458 T283 404T256 326Q256 259 315 215 T489 
+170Q602 170 691 214 T820 330Q852 386 852 494 Z" ></glyph>
+<glyph unicode="&#108;" horiz-adv-x="425" 
+d="M128 0L128 1493L298 1493L298 0L128 0Z" ></glyph>
+<glyph unicode="&#32;" horiz-adv-x="552" 
+></glyph>
+<glyph unicode="&#101;" horiz-adv-x="1147" 
+d="M894 384L1061 341Q1017 179 898 89 T592 0Q359 0 222 149 T85 566Q85 
+844 223 998 T582 1152Q796 1152 931 997 T1066 563Q1066 546 1066 512 L256 512Q
+266 346 361 258 T596 170Q702 170 776 221 T894 384ZM256 682L896 682Q883 
+814 822 879 Q730 981 582 981 Q448 981 357 900 T256 682Z" ></glyph>
+<glyph unicode="&#110;" horiz-adv-x="1147" 
+d="M128 0L128 1109L298 1109L298 958Q420 1152 648 1152 Q748 1152 831 1115 T955 
+1019T1013 878Q1024 825 1024 692 L1024 0L853 0L853 681Q853 798 830 855 T
+748 947T609 981Q482 981 390 904 T298 612L298 0L128 0Z" ></glyph>
+<glyph unicode="&#62;" horiz-adv-x="1190" 
+d="M1066 640L128 213L128 384L896 704L128 1024L128 1194L1066 768L1066 640Z" ></glyph>
+<glyph unicode="&#61;" horiz-adv-x="1190" 
+d="M1066 896L85 896L85 1066L1066 1066L1066 896ZM1066 426L85 426L85 597L1066 
+597L1066 426Z" ></glyph>
+<glyph unicode="&#98;" horiz-adv-x="1147" 
+d="M298 0L128 0L128 1493L298 1493L298 987Q416 1152 600 1152 Q702 1152 792 
+1111 T942 995T1033 816T1066 592Q1066 309 928 154 T599 0Q407 0 298 181 ZM
+298 584Q298 394 352 309 Q442 170 593 170 Q716 170 806 272 T896 576Q896 
+784 810 882 T601 981Q478 981 388 879 T298 584Z" ></glyph>
+<glyph unicode="&#112;" horiz-adv-x="1147" 
+d="M128 -426L128 1109L298 1109L298 960Q357 1056 431 1104 T610 1152Q748 1152 854 
+1079 T1012 874T1066 584Q1066 415 1005 279 T830 72T587 0Q494 0 420 44 T
+298 154L298 -426L128 -426ZM298 566Q298 364 385 267 T594 170Q718 170 807 
+271 T896 581Q896 782 809 881 T602 981Q482 981 390 875 T298 566Z" ></glyph>
+<glyph unicode="&#41;" horiz-adv-x="680" 
+d="M213 -426L85 -426Q384 52 384 533 Q384 721 341 906 Q307 1056 246 1193 Q207 
+1283 85 1493 L213 1493Q394 1242 480 990 Q554 772 554 534 Q554 264 455 12 T
+213 -426Z" ></glyph>
+</font>
+</defs>
+</svg>
+</div>
+<script type="application/xml" class="ODSGraphics" id="odsgraphics_GG3LH2YY">
+<?xml version="1.0" encoding="utf-8" ?>
+<SASReport version="1.2" xmlns:style="http://www.sas.com/sasreportmodel/styles">
+<Data version="9.4m6">
+  <DataModel name="StatGraphDataModel">
+    <IQData type="2DEmbedded" name="StatGraphData">
+      <EmbeddedData>
+      <Variables>
+        <Variable name="BOX_Total_length_____1000_bp___Y" label="quast.Total length (>= 1000 bp).metric_value" type="Numeric" valuesCount="59" SASFormat="BEST8." encoding="Text"/>
+        <Variable name="BOX_Total_length_____1000_bp__ST" label="STAT" type="String" valuesCount="59" length="10"/>
+      </Variables>
+        <ValuesList valuesCount="59">
+          <V>6039230</V>
+          <V>MIN</V>
+          <V>6639843</V>
+          <V>Q1</V>
+          <V>6912588.5</V>
+          <V>MEDIAN</V>
+          <V>7108656.5</V>
+          <V>Q3</V>
+          <V>7793566</V>
+          <V>MAX</V>
+          <V>7048074.078</V>
+          <V>MEAN</V>
+          <V>993336.458440408</V>
+          <V>STD</V>
+          <V>1000</V>
+          <V>N</V>
+          <V>6039230</V>
+          <V>DATAMIN</V>
+          <V>13523259</V>
+          <V>DATAMAX</V>
+          <V>13523259</V>
+          <V>FAROUTLIER</V>
+          <V>13031764</V>
+          <V>FAROUTLIER</V>
+          <V>12779666</V>
+          <V>FAROUTLIER</V>
+          <V>12706249</V>
+          <V>FAROUTLIER</V>
+          <V>12673087</V>
+          <V>FAROUTLIER</V>
+          <V>12627228</V>
+          <V>FAROUTLIER</V>
+          <V>12622809</V>
+          <V>FAROUTLIER</V>
+          <V>12520985</V>
+          <V>FAROUTLIER</V>
+          <V>12498956</V>
+          <V>FAROUTLIER</V>
+          <V>12472214</V>
+          <V>FAROUTLIER</V>
+          <V>12352700</V>
+          <V>FAROUTLIER</V>
+          <V>12309460</V>
+          <V>FAROUTLIER</V>
+          <V>12254752</V>
+          <V>FAROUTLIER</V>
+          <V>12251686</V>
+          <V>FAROUTLIER</V>
+          <V>12143060</V>
+          <V>FAROUTLIER</V>
+          <V>12096422</V>
+          <V>FAROUTLIER</V>
+          <V>11816086</V>
+          <V>FAROUTLIER</V>
+          <V>11790001</V>
+          <V>FAROUTLIER</V>
+          <V>11783503</V>
+          <V>FAROUTLIER</V>
+          <V>11699023</V>
+          <V>FAROUTLIER</V>
+          <V>11646751</V>
+          <V>FAROUTLIER</V>
+          <V>11502147</V>
+          <V>FAROUTLIER</V>
+          <V>11500135</V>
+          <V>FAROUTLIER</V>
+          <V>11467990</V>
+          <V>FAROUTLIER</V>
+          <V>11277452</V>
+          <V>FAROUTLIER</V>
+          <V>11234107</V>
+          <V>FAROUTLIER</V>
+          <V>11129046</V>
+          <V>FAROUTLIER</V>
+          <V>11073312</V>
+          <V>FAROUTLIER</V>
+          <V>10820712</V>
+          <V>FAROUTLIER</V>
+          <V>10807730</V>
+          <V>FAROUTLIER</V>
+          <V>10695113</V>
+          <V>FAROUTLIER</V>
+          <V>10683289</V>
+          <V>FAROUTLIER</V>
+          <V>10668287</V>
+          <V>FAROUTLIER</V>
+          <V>10625206</V>
+          <V>FAROUTLIER</V>
+          <V>10138790</V>
+          <V>FAROUTLIER</V>
+          <V>9881059</V>
+          <V>FAROUTLIER</V>
+          <V>9760443</V>
+          <V>FAROUTLIER</V>
+          <V>9541311</V>
+          <V>FAROUTLIER</V>
+          <V>9392724</V>
+          <V>FAROUTLIER</V>
+          <V>8785772</V>
+          <V>FAROUTLIER</V>
+          <V>8316722</V>
+          <V>OUTLIER</V>
+          <V>8220413</V>
+          <V>OUTLIER</V>
+          <V>8194395</V>
+          <V>OUTLIER</V>
+          <V>8025774</V>
+          <V>OUTLIER</V>
+          <V>7948067</V>
+          <V>OUTLIER</V>
+          <V>7879881</V>
+          <V>OUTLIER</V>
+          <V>7835864</V>
+          <V>OUTLIER</V>
+          <V>7823914</V>
+          <V>OUTLIER</V>
+          <V>7820446</V>
+          <V>OUTLIER</V>
+        </ValuesList>
+      </EmbeddedData>
+    </IQData>
+    <VarStats>
+      <VarStat name="BOX_Total_length_____1000_bp___Y" modelName="StatGraphData" nobs="59" min="1000" max="13523259" />
+    </VarStats>
+  </DataModel>
+</Data>
+  <View>
+    <StatGraph height="480" width="640" designHeight="480" designWidth="640" renderer="java" style:style="StatGraphStyle" antiAlias="true" nBinsMax="10000" nXYBinsMax="100000" linePatternOBSMax="10000" totalCellMax="2000" sessionLocale="en_US" missingOption="." notesOption="true" collation="binary" version="9.4m6">
+      <LayoutOverlay>
+        <XAxisOpts type="DISCRETE">
+          <DiscreteOpts sortOrder="ascendingFormatted" tickValueFitPolicy="SplitRotate" tickValueListPolicy="Union">
+          </DiscreteOpts>
+        </XAxisOpts>
+        <Y2AxisOpts labelFitPolicy="Split">
+        </Y2AxisOpts>
+        <YAxisOpts label="Total length (&gt;=1000 bp)" labelFitPolicy="Split" type="LINEAR">
+        </YAxisOpts>
+        <X2AxisOpts type="DISCRETE">
+          <DiscreteOpts sortOrder="ascendingFormatted" tickValueFitPolicy="SplitRotate" tickValueListPolicy="Union">
+          </DiscreteOpts>
+        </X2AxisOpts>
+        <BoxPlotParm y="StatGraphData#BOX_TOTAL_LENGTH_____1000_BP___Y" y_type="Variable" stat="StatGraphData#BOX_TOTAL_LENGTH_____1000_BP__ST" dataID="BOX_Total_length_____1000_bp" name="VBOX" _stmt="BoxPlot" legendLabel="quast.Total length (&gt;= 1000 bp).metric_value" primary="true">
+        </BoxPlotParm>
+      </LayoutOverlay>
+    </StatGraph>
+  </View>
+</SASReport>
+</script>
+</div>
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+<hr class="pagebreak"/>
+<div id="IDX6" style="padding-bottom: 8px; padding-top: 1px">
+<div class="c">
+<script type="text/ecmascript">
+var SVG_IDX6_SVGRoot = null;
+var SVG_IDX6_TrueCoords = null;
+var SVG_IDX6_singleTip = null;
+var SVG_IDX6_singleBox = null;
+var SVG_IDX6_singleText = null;
+var SVG_IDX6_tiptspan = null;
+var SVG_IDX6_attrScale = 1;
+var SVG_IDX6_rightEdge = null;
+var SVG_IDX6_SVGHeight = null;
+var SVG_IDX6_SVGWidth = null;
+function SVG_IDX6_Init(anchor) {
+   SVG_IDX6_SVGRoot = document.getElementById(anchor);
+   SVG_IDX6_TrueCoords = SVG_IDX6_SVGRoot.createSVGPoint();
+   SVG_IDX6_singleTip = document.getElementById(anchor + '_singleTip1');
+   SVG_IDX6_singleBox = document.getElementById(anchor + '_singleBox1');
+   SVG_IDX6_singleText = document.getElementById(anchor + '_singleText1');
+   SVG_IDX6_tiptspan = document.getElementById(anchor + '_tiptspan1');
+   SVG_IDX6_tiptspan.firstChild.nodeValue = null;
+   SVG_IDX6_SVGRoot.addEventListener('mousemove', SVG_IDX6_ShowTooltip, false);
+   SVG_IDX6_SVGRoot.addEventListener('mouseout', SVG_IDX6_HideTooltip, false);
+   SVG_IDX6_SVGHeight = SVG_IDX6_SVGRoot.getAttributeNS(null, "height");
+   SVG_IDX6_SVGWidth = SVG_IDX6_SVGRoot.getAttributeNS(null, "width");
+   if (!isNaN(parseFloat(SVG_IDX6_SVGHeight)) && !isNaN(parseFloat(SVG_IDX6_SVGWidth)))
+      SVG_IDX6_GetHW();
+}
+function SVG_IDX6_GetHW()
+{
+    if (SVG_IDX6_SVGWidth != null && SVG_IDX6_SVGWidth != "") {
+       if (SVG_IDX6_SVGWidth.match(/%/)) {
+          var factor = parseFloat(SVG_IDX6_SVGWidth.replace(/%/,""))/100;
+          SVG_IDX6_SVGWidth = window.innerWidth * factor;
+       }
+       else if (SVG_IDX6_SVGWidth.match(/in/))
+          SVG_IDX6_SVGWidth = parseFloat(SVG_IDX6_SVGWidth.replace(/in/,""))*96;
+       else if (SVG_IDX6_SVGWidth.match(/cm/))
+          SVG_IDX6_SVGWidth = parseFloat(SVG_IDX6_SVGWidth.replace(/in/,""))*96/2.54;
+       else
+           SVG_IDX6_SVGWidth = parseFloat(SVG_IDX6_SVGWidth);
+    }
+    if (SVG_IDX6_SVGHeight != null && SVG_IDX6_SVGHeight != "") {
+       if (SVG_IDX6_SVGHeight.match(/%/)) {
+          var factor = parseFloat(SVG_IDX6_SVGHeight.replace(/%/,""))/100;
+          SVG_IDX6_SVGHeight = window.innerHeight * factor;
+       }
+       else if (SVG_IDX6_SVGHeight.match(/in/))
+          SVG_IDX6_SVGHeight = parseFloat(SVG_IDX6_SVGHeight.replace(/in/,""))*96;
+       else if (SVG_IDX6_SVGHeight.match(/cm/))
+          SVG_IDX6_SVGHeight = parseFloat(SVG_IDX6_SVGHeight.replace(/in/,""))*96/2.54;
+       else
+           SVG_IDX6_SVGHeight = parseFloat(SVG_IDX6_SVGHeight);
+    }
+}
+function SVG_IDX6_GetScaleFactors(evt)
+{
+   var zoomFactor = 1;
+   windowWidth  = (top.innerWidth==undefined)  ? window.innerWidth  : top.innerWidth;
+   windowHeight = (top.innerHeight==undefined) ? window.innerHeight : top.innerHeight;
+   SVG_IDX6_rightEdge = (SVG_IDX6_SVGWidth) ? SVG_IDX6_SVGWidth - window.pageXOffset : windowWidth;
+   if (parseFloat(SVG_IDX6_SVGWidth) > 0 || parseFloat(SVG_IDX6_SVGHeight) > 0)
+      var tipScale = 1.875;
+   else {
+      var tipXScale  = (screen.width/windowWidth) / SVG_IDX6_SVGRoot.currentScale;
+      var tipYScale  = (screen.height/windowHeight) / SVG_IDX6_SVGRoot.currentScale;
+      var tipScale   = (tipXScale + tipYScale)/2.0;
+   }
+   SVG_IDX6_attrScale = tipScale;
+   if (navigator.appName == 'Adobe SVG Viewer') {
+      if (screen.deviceXDPI != null && screen.logicalXDPI != null)
+         zoomFactor = screen.deviceXDPI/screen.logicalXDPI;
+      SVG_IDX6_attrScale = zoomFactor*tipScale;
+   }
+   else if (navigator.userAgent != null && navigator.userAgent != '') {
+      var ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf("msie") != -1 || ua.indexOf("trident") != -1) {
+         zoomFactor = screen.deviceXDPI/screen.logicalXDPI;
+         SVG_IDX6_attrScale = tipScale/zoomFactor;
+         SVG_IDX6_rightEdge /= zoomFactor;
+      }
+      else if (ua.indexOf("ipad") != -1) {
+         zoomFactor = SVG_IDX6_SVGRoot.clientWidth / window.innerWidth;
+         SVG_IDX6_attrScale = 1.5 / zoomFactor;
+         SVG_IDX6_rightEdge /= zoomFactor;
+      }
+      else if (ua.indexOf("opera") != -1)
+         SVG_IDX6_attrScale = tipScale;
+      else if (ua.indexOf("firefox") != -1)
+         SVG_IDX6_attrScale = tipScale;
+      else {
+         if (SVG_IDX6_SVGWidth > 0 || SVG_IDX6_SVGHeight > 0)
+            zoomFactor = 1;
+         else
+            zoomFactor = parseInt(document.defaultView.getComputedStyle(SVG_IDX6_SVGRoot, null).width,10)/
+                                  SVG_IDX6_SVGRoot.clientWidth;
+         SVG_IDX6_attrScale = tipScale/zoomFactor;
+         SVG_IDX6_rightEdge *= zoomFactor;
+      }
+   }
+}
+function SVG_IDX6_GetTrueCoords(evt)
+{
+   var trans = SVG_IDX6_SVGRoot.currentTranslate;
+   var scale = SVG_IDX6_SVGRoot.currentScale;
+   SVG_IDX6_GetScaleFactors();
+   var p1    = SVG_IDX6_SVGRoot.createSVGPoint();
+   var p2;
+      var m = SVG_IDX6_SVGRoot.getScreenCTM();
+      if (navigator.userAgent.toLowerCase().indexOf("ipad") != -1) {
+         p1.x = evt.clientX + window.pageXOffset;
+         p1.y = evt.clientY + window.pageYOffset;
+      }
+      else {
+      p1.x = evt.clientX;
+      p1.y = evt.clientY;
+      }
+      p2 = p1.matrixTransform(m.inverse());
+   SVG_IDX6_TrueCoords.x = Math.round(p2.x*100) / 100;
+   SVG_IDX6_TrueCoords.y = Math.round(p2.y*100) / 100;
+}
+function SVG_IDX6_HideTooltip( evt )
+{
+   SVG_IDX6_tiptspan.firstChild.nodeValue = null;
+   SVG_IDX6_singleTip.setAttributeNS(null, 'visibility', 'hidden');
+}
+function SVG_IDX6_ShowTooltip( evt )
+{
+   SVG_IDX6_GetTrueCoords( evt );
+   var targetElement = evt.target;
+   var tspanCount = targetElement.getElementsByTagName('desc').length;
+   if (tspanCount == 1) {
+      var targetTspan = targetElement.getElementsByTagName('desc').item(0);
+      if ( targetTspan) {
+         if (targetTspan.firstChild != null)
+            SVG_IDX6_tiptspan.firstChild.nodeValue = targetTspan.firstChild.nodeValue; }
+   }
+   if ( '' != SVG_IDX6_tiptspan.firstChild.nodeValue )
+   {
+      var outline = SVG_IDX6_singleText.getBBox();
+      SVG_IDX6_singleBox.setAttributeNS(null, 'transform', 'scale(' + SVG_IDX6_attrScale + ',' + SVG_IDX6_attrScale + ')' );
+      SVG_IDX6_singleText.setAttributeNS(null, 'transform', 'scale(' + SVG_IDX6_attrScale + ',' + SVG_IDX6_attrScale + ')' );
+      SVG_IDX6_singleTip.setAttributeNS(null, 'visibility', 'visible');
+      if (evt.clientX + ((outline.width + 8)/0.8) * SVG_IDX6_attrScale > SVG_IDX6_rightEdge) {
+         var xPos = SVG_IDX6_TrueCoords.x - parseInt((outline.width + 8)*SVG_IDX6_attrScale);
+         if (xPos < 0)
+            xPos = 0;
+      }
+      else
+         var xPos = SVG_IDX6_TrueCoords.x;
+      if (SVG_IDX6_TrueCoords.y < 16) {
+         var yPos = SVG_IDX6_TrueCoords.y + ((outline.height + 16)/0.8)*SVG_IDX6_attrScale;
+         if (yPos > windowHeight)
+            yPos = SVG_IDX6_TrueCoords.y - parseInt((outline.height + 8)*SVG_IDX6_attrScale);
+      }
+      else
+         var yPos = SVG_IDX6_TrueCoords.y - parseInt((outline.height + 8)*SVG_IDX6_attrScale);
+      if (Number(outline.width == 0))
+         SVG_IDX6_singleBox.setAttributeNS(null, 'width', outline.width);
+      else
+         SVG_IDX6_singleBox.setAttributeNS(null, 'width', outline.width + 8);
+      SVG_IDX6_singleBox.setAttributeNS(null, 'height', outline.height + 8);
+      SVG_IDX6_singleTip.setAttributeNS(null, 'transform', 'translate(' + xPos + ',' + yPos + ')');
+   }
+}
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" baseProfile="full" version="1.1" id="SVG_IDX6" onload='SVG_IDX6_Init("SVG_IDX6")' viewBox="-1 -1 641 481" height="480" width="640">
+<desc id="desc_SVG_IDX6">The SGPlot Procedure</desc>
+<defs>
+<clipPath id="SVG_IDX6_clipPage1">
+<rect x="-1" y="-1" width="641" height="481"></rect>
+</clipPath>
+</defs>
+<g id="SVG_IDX6_Page1" clip-path="url(#SVG_IDX6_clipPage1)">
+<g transform=" scale(1, 1)">
+<rect x="0" y="0" width="639" height="479" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="0" width="639" height="479" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="0" width="639" height="479" style="stroke: #D1D1D1; stroke-width: 1; fill: none; "></rect>
+<g transform="matrix(1, 0, 0, 1, 11, 11)">
+<defs>
+<clipPath id="SVG_IDX6_ClipPath0">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX6_ClipPath0)">
+<defs>
+<clipPath id="SVG_IDX6_ClipPath1">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX6_ClipPath1)">
+<rect x="1.99676" y="0.49891" width="593.04038" height="409.10675" style="fill: #FFFFFF; "></rect>
+<defs>
+<clipPath id="SVG_IDX6_ClipPath2">
+<rect x="1" y="-1" width="595" height="412" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX6_ClipPath2)">
+<path d="M590.04522 206.05011L584.13598 206.05011L578.22674 206.05011L572.3175 206.05011L566.40826 206.05011L560.49908 206.05011L
+554.58984 206.05011L548.6806 206.05011L542.77136 206.04934L536.86212 205.73713L530.95288 205.31031L525.04363 206.04005L
+519.13439 205.97549L513.22515 205.06384L507.31594 205.57636L501.4067 202.94754L495.49746 202.79635L489.58822 203.03466L
+483.67898 202.85636L477.76977 203.91911L471.86053 205.80537L465.95129 203.19734L460.04205 203.46504L454.13281 203.25238L
+448.22357 205.1995L442.31436 203.93643L436.40512 204.23867L430.49587 205.31866L424.58663 202.70332L418.67739 203.67886L
+412.76815 205.96392L406.85894 205.97546L400.9497 205.06387L395.04046 205.66177L389.13122 204.99728L383.22198 205.22564L
+377.31274 204.97999L371.40353 204.99002L365.49429 205.97546L359.58505 206.05004L353.67581 205.97549L347.76657 205.06463L
+341.85736 205.97546L335.94811 205.97466L330.03887 204.67701L324.12963 204.17481L318.22039 204.56152L312.31115 201.62925L
+306.40194 200.54788L300.4927 189.01766L294.58346 176.52491L288.67422 134.16691L282.76498 24.53684L276.85574 4.9891L
+270.94653 31.88794L265.03729 101.07598L259.12805 104.68003L253.21881 92.66409L247.30958 172.76716L241.40034 204.61732L
+235.4911 205.9754L229.58187 206.05007L223.67263 206.05011L217.76339 206.05011L211.85417 206.05011L205.94493 206.05011L
+200.03568 206.05011L194.12646 206.05011L188.21722 206.05011L182.30798 206.05011L176.39875 206.05011L170.48951 206.05011L
+164.58027 206.05011L158.67105 206.05011L152.7618 206.05011L146.85257 206.05011L140.94334 206.05011L135.0341 206.05011L
+129.12486 206.05011L123.21563 206.05011L117.30639 206.05011L111.39716 206.05011L105.48793 206.05011L99.57868 206.05011L
+93.66945 206.05011L87.76022 206.05011L81.85098 206.05011L75.94175 206.05011L70.03251 206.05011L64.12328 206.05011L
+58.21404 206.05011L52.3048 206.05011L46.39557 206.05011L40.48633 206.05011L34.5771 206.05011L28.66786 206.05011L
+22.75863 206.05011L16.84939 206.05011L10.94016 206.05011L5.03092 206.05011L5.03092 206.05011L10.94016 206.05011L
+16.84939 206.05011L22.75863 206.05011L28.66786 206.05011L34.5771 206.05011L40.48633 206.05011L46.39557 206.05011L
+52.3048 206.05011L58.21404 206.05011L64.12328 206.05011L70.03251 206.05011L75.94175 206.05011L81.85098 206.05011L
+87.76022 206.05011L93.66945 206.05011L99.57868 206.05011L105.48793 206.05011L111.39716 206.05011L117.30639 206.05011L
+123.21563 206.05011L129.12486 206.05011L135.0341 206.05011L140.94334 206.05011L146.85257 206.05011L152.7618 206.05011L
+158.67105 206.05011L164.58027 206.05011L170.48951 206.05011L176.39875 206.05011L182.30798 206.05011L188.21722 206.05011L
+194.12646 206.05011L200.03568 206.05011L205.94493 206.05011L211.85417 206.05011L217.76339 206.05011L223.67263 206.05011L
+229.58187 206.05014L235.4911 206.12481L241.40034 207.48289L247.30958 239.33305L253.21881 319.43612L259.12805 307.42019L
+265.03729 311.02423L270.94653 380.21228L276.85574 407.11111L282.76498 387.56338L288.67422 277.93328L294.58346 235.5753L
+300.4927 223.08254L306.40194 211.55233L312.31115 210.47096L318.22039 207.53869L324.12963 207.9254L330.03887 207.4232L
+335.94811 206.12554L341.85736 206.12475L347.76657 207.03558L353.67581 206.12472L359.58505 206.05017L365.49429 206.12475L
+371.40353 207.11019L377.31274 207.12022L383.22198 206.87457L389.13122 207.10293L395.04046 206.43844L400.9497 207.03634L
+406.85894 206.12475L412.76815 206.13629L418.67739 208.42135L424.58663 209.39689L430.49587 206.78155L436.40512 207.86152L
+442.31436 208.16378L448.22357 206.90069L454.13281 208.84783L460.04205 208.63517L465.95129 208.90287L471.86053 206.29484L
+477.76977 208.1811L483.67898 209.24385L489.58822 209.06555L495.49746 209.30386L501.4067 209.15267L507.31594 206.52384L
+513.22515 207.03637L519.13439 206.12472L525.04363 206.06016L530.95288 206.7899L536.86212 206.36306L542.77136 206.05087L
+548.6806 206.05011L554.58984 206.05011L560.49908 206.05011L566.40826 206.05011L572.3175 206.05011L578.22674 206.05011L
+584.13598 206.05011L590.04522 206.05011Z" style="fill: #B9CFE7; fill-rule: evenodd; "></path>
+<path d="M5.03092 206.05011L10.94016 206.05011L16.84939 206.05011L22.75863 206.05011L28.66786 206.05011L34.5771 206.05011L
+40.48633 206.05011L46.39557 206.05011L52.3048 206.05011L58.21404 206.05011L64.12328 206.05011L70.03251 206.05011L
+75.94175 206.05011L81.85098 206.05011L87.76022 206.05011L93.66945 206.05011L99.57868 206.05011L105.48793 206.05011L
+111.39716 206.05011L117.30639 206.05011L123.21563 206.05011L129.12486 206.05011L135.0341 206.05011L140.94334 206.05011L
+146.85257 206.05011L152.7618 206.05011L158.67105 206.05011L164.58027 206.05011L170.48951 206.05011L176.39875 206.05011L
+182.30798 206.05011L188.21722 206.05011L194.12646 206.05011L200.03568 206.05011L205.94493 206.05011L211.85417 206.05011L
+217.76339 206.05011L223.67263 206.05011L229.58187 206.05007L235.4911 205.9754L241.40034 204.61732L247.30958 172.76716L
+253.21881 92.66409L259.12805 104.68003L265.03729 101.07598L270.94653 31.88794L276.85574 4.9891L282.76498 24.53684L
+288.67422 134.16691L294.58346 176.52491L300.4927 189.01766L306.40194 200.54788L312.31115 201.62925L318.22039 204.56152L
+324.12963 204.17481L330.03887 204.67701L335.94811 205.97466L341.85736 205.97546L347.76657 205.06463L353.67581 205.97549L
+359.58505 206.05004L365.49429 205.97546L371.40353 204.99002L377.31274 204.97999L383.22198 205.22564L389.13122 204.99728L
+395.04046 205.66177L400.9497 205.06387L406.85894 205.97546L412.76815 205.96392L418.67739 203.67886L424.58663 202.70332L
+430.49587 205.31866L436.40512 204.23867L442.31436 203.93643L448.22357 205.1995L454.13281 203.25238L460.04205 203.46504L
+465.95129 203.19734L471.86053 205.80537L477.76977 203.91911L483.67898 202.85636L489.58822 203.03466L495.49746 202.79635L
+501.4067 202.94754L507.31594 205.57636L513.22515 205.06384L519.13439 205.97549L525.04363 206.04005L530.95288 205.31031L
+536.86212 205.73713L542.77136 206.04934L548.6806 206.05011L554.58984 206.05011L560.49908 206.05011L566.40826 206.05011L
+572.3175 206.05011L578.22674 206.05011L584.13598 206.05011L590.04522 206.05011" style="stroke: #E3D5CD; stroke-width: 1; fill: none; "></path>
+<path d="M5.03092 206.05011L10.94016 206.05011L16.84939 206.05011L22.75863 206.05011L28.66786 206.05011L34.5771 206.05011L
+40.48633 206.05011L46.39557 206.05011L52.3048 206.05011L58.21404 206.05011L64.12328 206.05011L70.03251 206.05011L
+75.94175 206.05011L81.85098 206.05011L87.76022 206.05011L93.66945 206.05011L99.57868 206.05011L105.48793 206.05011L
+111.39716 206.05011L117.30639 206.05011L123.21563 206.05011L129.12486 206.05011L135.0341 206.05011L140.94334 206.05011L
+146.85257 206.05011L152.7618 206.05011L158.67105 206.05011L164.58027 206.05011L170.48951 206.05011L176.39875 206.05011L
+182.30798 206.05011L188.21722 206.05011L194.12646 206.05011L200.03568 206.05011L205.94493 206.05011L211.85417 206.05011L
+217.76339 206.05011L223.67263 206.05011L229.58187 206.05014L235.4911 206.12481L241.40034 207.48289L247.30958 239.33305L
+253.21881 319.43612L259.12805 307.42019L265.03729 311.02423L270.94653 380.21228L276.85574 407.11111L282.76498 387.56338L
+288.67422 277.93328L294.58346 235.5753L300.4927 223.08254L306.40194 211.55233L312.31115 210.47096L318.22039 207.53869L
+324.12963 207.9254L330.03887 207.4232L335.94811 206.12554L341.85736 206.12475L347.76657 207.03558L353.67581 206.12472L
+359.58505 206.05017L365.49429 206.12475L371.40353 207.11019L377.31274 207.12022L383.22198 206.87457L389.13122 207.10293L
+395.04046 206.43844L400.9497 207.03634L406.85894 206.12475L412.76815 206.13629L418.67739 208.42135L424.58663 209.39689L
+430.49587 206.78155L436.40512 207.86152L442.31436 208.16378L448.22357 206.90069L454.13281 208.84783L460.04205 208.63517L
+465.95129 208.90287L471.86053 206.29484L477.76977 208.1811L483.67898 209.24385L489.58822 209.06555L495.49746 209.30386L
+501.4067 209.15267L507.31594 206.52384L513.22515 207.03637L519.13439 206.12472L525.04363 206.06016L530.95288 206.7899L
+536.86212 206.36306L542.77136 206.05087L548.6806 206.05011L554.58984 206.05011L560.49908 206.05011L566.40826 206.05011L
+572.3175 206.05011L578.22674 206.05011L584.13598 206.05011L590.04522 206.05011" style="stroke: #E3D5CD; stroke-width: 1; fill: none; "></path>
+</g>
+<defs>
+<clipPath id="SVG_IDX6_ClipPath3">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX6_ClipPath3)">
+<path d="M1.99676 410.10457L595.03715 410.10457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M595.03715 410.10457L595.03715 0" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M1.99676 0L595.03715 0" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M1.99676 410.10457L1.99676 0" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M1.99676 410.10457L595.03715 410.10457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M4.99192 410.10457L4.99192 415.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 1.49192, 430.20457)">
+<text textLength="7" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX6_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000030;</text>
+</g>
+<path d="M102.5008 410.10457L102.5008 415.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 78.0008, 430.20457)">
+<text textLength="49" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX6_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000032;&#x000035;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<path d="M200.00969 410.10457L200.00969 415.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 175.50969, 430.20457)">
+<text textLength="49" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX6_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000035;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<path d="M297.51857 410.10457L297.51857 415.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 273.01857, 430.20457)">
+<text textLength="49" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX6_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000037;&#x000035;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<path d="M395.02746 410.10457L395.02746 415.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 367.02746, 430.20457)">
+<text textLength="56" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX6_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<path d="M492.53634 410.10457L492.53634 415.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 464.53634, 430.20457)">
+<text textLength="56" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX6_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x000032;&#x000035;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<path d="M590.04523 410.10457L590.04523 415.70457" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 562.04523, 430.20457)">
+<text textLength="56" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX6_Arial Font3', 'Arial', sans-serif; font-size: 12px; white-space: pre; ">&#x000031;&#x000035;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<g transform="matrix(1, 0, 0, 1, 190.51696, 452.20457)">
+<text textLength="216" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX6_Arial Font3', 'Arial', sans-serif; font-size: 13px; white-space: pre; ">&#x000054;&#x00006F;&#x000074;&#x000061;&#x00006C;&#x000020;&#x00006C;&#x000065;&#x00006E;&#x000067;&#x000074;&#x000068;&#x000020;&#x000028;&#x00003E;&#x00003D;&#x000020;&#x000031;&#x000030;&#x000030;&#x000030;&#x000020;&#x000062;&#x000070;&#x000029;&#x000020;&#x00006F;&#x000066;&#x000020;&#x000053;&#x000061;&#x00006D;&#x000070;&#x00006C;&#x000065;&#x000073;</text>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="SVG_IDX6_ClipPath4">
+<rect x="1" y="-1" width="595" height="412" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX6_ClipPath4)">
+</g>
+<defs>
+<clipPath id="SVG_IDX6_ClipPath5">
+<rect x="-1" y="-1" width="619" height="459" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX6_ClipPath5)">
+</g>
+</g>
+</g>
+<rect x="0" y="0" width="640" height="480" fill="#FFFFFF" fill-opacity="0" aria-hidden="true">
+<desc>The SGPlot Procedure</desc>
+</rect>
+</g>
+<g id="SVG_IDX6_singleTip1" visibility="hidden" pointer-events="none">
+   <rect id="SVG_IDX6_singleBox1" x="0" y="0" width="88" height="20" rx="2" ry="2" fill="white" stroke="black" stroke-width="0.8" opacity="0.8"></rect>
+   <text id="SVG_IDX6_singleText1" x="5" y="8" font-family="'Albany AMT', sans-serif" font-size="6"><tspan id="SVG_IDX6_tiptspan1" x="4" class="tiptext"><![CDATA[ ]]></tspan></text>
+</g>
+<defs>
+<style type="text/css"><![CDATA[
+    tspan.tiptext { white-space: pre }
+]]></style>
+</defs>
+<defs>
+<style type="text/css"><![CDATA[
+  @font-face {
+      font-family: "SVG_IDX6_Arial Font3";
+      src: url("#SVG_IDX6_Font3") format("svg")
+      }
+]]></style>
+<font id="SVG_IDX6_Font3" horiz-adv-x="6144" >
+   <font-face      font-family="SVG_IDX6_Arial Font3"
+    units-per-em="2048" ascent="1854" descent="-434" >
+      <font-face-src>
+         <font-face-name name="SVG_IDX6_Arial Font3"></font-face-name>
+      </font-face-src>
+   </font-face>
+<missing-glyph><path d="M0 0v4992h3456v-4992h-3456" fill="none"></path>
+</missing-glyph>
+<glyph unicode="&#40;" horiz-adv-x="680" 
+d="M469 -426Q326 -238 227 12 T128 534Q128 772 202 990 Q288 1242 469 1493 L597 
+1493Q476 1285 437 1196 Q376 1058 341 908 Q298 722 298 533 Q298 52 597 -426 Z" ></glyph>
+<glyph unicode="&#47;" horiz-adv-x="552" 
+d="M0 0L426 1493L602 1493L175 0L0 0Z" ></glyph>
+<glyph unicode="&#104;" horiz-adv-x="1147" 
+d="M128 0L128 1493L298 1493L298 991Q432 1152 635 1152 Q760 1152 852 1102 T984 
+966T1024 714L1024 0L853 0L853 709Q853 852 789 916 T607 981Q519 981 
+441 937 T331 819T298 612L298 0L128 0Z" ></glyph>
+<glyph unicode="&#65;" horiz-adv-x="1360" 
+d="M-8 0L590 1493L732 1493L1331 0L1152 0L978 469L344 469L170 0L-8 
+0ZM408 640L914 640L776 1012Q708 1198 661 1322 Q608 1180 556 1041 Z" ></glyph>
+<glyph unicode="&#103;" horiz-adv-x="1147" 
+d="M128 -85L298 -128Q310 -190 361 -218 Q429 -256 548 -256 Q676 -256 745 -210 T
+840 -82Q854 -32 853 128 Q732 0 553 0 Q330 0 207 167 T85 569Q85 730 
+140 867 T299 1077T544 1152Q731 1152 853 981 L853 1109L1024 1109L1024 164Q1024 
+-90 973 -196 T814 -365T546 -426Q356 -426 240 -341 T128 -85ZM256 583Q256 368 
+341 269 T554 170Q681 170 767 269 T853 577Q853 777 764 879 T551 981Q428 
+981 342 881 T256 583Z" ></glyph>
+<glyph unicode="&#48;" horiz-adv-x="1147" 
+d="M85 746Q85 1005 140 1174 T303 1418T576 1493Q697 1493 799 1446 T950 1309T1032 
+1091T1066 746Q1066 488 1012 320 T849 75T576 0Q358 0 234 130 Q85 334 
+85 746ZM256 746Q256 378 348 274 T576 170Q711 170 803 275 T896 746Q896 
+1094 809 1208 T574 1322Q438 1322 346 1222 Q256 1093 256 746Z" ></glyph>
+<glyph unicode="&#50;" horiz-adv-x="1147" 
+d="M1024 170L1024 0L42 0Q40 64 66 124 Q106 222 196 313 T435 517Q667 
+722 760 838 T853 1066Q853 1174 772 1248 T560 1322Q422 1322 340 1243 T256 1024L
+85 1066Q104 1274 229 1384 T564 1493Q776 1493 900 1373 T1024 1075Q1024 984 987 
+897 T865 714T594 452Q430 316 380 268 T299 170Z" ></glyph>
+<glyph unicode="&#53;" horiz-adv-x="1147" 
+d="M85 426L256 426Q278 299 350 235 T560 170Q733 170 814 267 T896 524Q896 
+677 823 765 T573 853Q462 853 401 806 T298 682L128 725L298 1493L981 1493L
+981 1322L434 1322L338 925Q469 1024 613 1024 Q804 1024 935 887 T1066 536Q1066 
+332 949 182 Q807 0 560 0 Q358 0 230 117 T85 426Z" ></glyph>
+<glyph unicode="&#55;" horiz-adv-x="1147" 
+d="M85 1322L85 1493L1066 1493L1066 1355Q917 1202 770 945 T543 418Q485 227 469 
+0 L298 0Q302 179 377 433 T595 924T896 1322Z" ></glyph>
+<glyph unicode="&#49;" horiz-adv-x="1147" 
+d="M768 0L597 0L597 1163Q528 1100 415 1037 T213 943L213 1120Q372 1192 490 
+1294 T658 1493L768 1493L768 0Z" ></glyph>
+<glyph unicode="&#84;" horiz-adv-x="1190" 
+d="M512 0L512 1322L42 1322L42 1493L1152 1493L1152 1322L682 1322L682 0L512 
+0Z" ></glyph>
+<glyph unicode="&#111;" horiz-adv-x="1147" 
+d="M85 576Q85 882 247 1029 Q382 1152 576 1152 Q792 1152 929 1003 T1066 591Q1066 
+378 1005 256 T829 67T576 0Q356 0 220 148 T85 576ZM256 576Q256 373 347 
+272 T576 170Q714 170 805 272 T896 582Q896 778 804 880 T576 981Q438 981 
+347 880 T256 576Z" ></glyph>
+<glyph unicode="&#116;" horiz-adv-x="552" 
+d="M512 175L554 16Q479 0 419 0 Q322 0 268 31 T192 112T170 326L170 938L
+42 938L42 1109L170 1109L170 1372L341 1480L341 1109L512 1109L512 938L341 
+938L341 318Q341 240 350 218 T379 183T437 170Q466 170 512 175Z" ></glyph>
+<glyph unicode="&#97;" horiz-adv-x="1147" 
+d="M853 128Q759 58 664 29 T459 0Q279 0 182 89 T85 316Q85 396 122 463 T
+218 571T352 632Q408 647 518 660 Q745 688 852 725 Q853 761 853 771 Q853 
+878 800 922 Q728 981 586 981 Q454 981 391 934 T298 768L128 810Q152 928 
+207 1001 T367 1113T610 1152Q747 1152 832 1118 T958 1032T1014 903Q1024 854 1024 
+734 L1024 495Q1024 245 1032 161 T1066 0L896 0Q862 54 853 128ZM853 554Q
+746 518 532 492 Q411 477 361 458 T283 404T256 326Q256 259 315 215 T489 
+170Q602 170 691 214 T820 330Q852 386 852 494 Z" ></glyph>
+<glyph unicode="&#108;" horiz-adv-x="425" 
+d="M128 0L128 1493L298 1493L298 0L128 0Z" ></glyph>
+<glyph unicode="&#32;" horiz-adv-x="552" 
+></glyph>
+<glyph unicode="&#101;" horiz-adv-x="1147" 
+d="M894 384L1061 341Q1017 179 898 89 T592 0Q359 0 222 149 T85 566Q85 
+844 223 998 T582 1152Q796 1152 931 997 T1066 563Q1066 546 1066 512 L256 512Q
+266 346 361 258 T596 170Q702 170 776 221 T894 384ZM256 682L896 682Q883 
+814 822 879 Q730 981 582 981 Q448 981 357 900 T256 682Z" ></glyph>
+<glyph unicode="&#110;" horiz-adv-x="1147" 
+d="M128 0L128 1109L298 1109L298 958Q420 1152 648 1152 Q748 1152 831 1115 T955 
+1019T1013 878Q1024 825 1024 692 L1024 0L853 0L853 681Q853 798 830 855 T
+748 947T609 981Q482 981 390 904 T298 612L298 0L128 0Z" ></glyph>
+<glyph unicode="&#62;" horiz-adv-x="1190" 
+d="M1066 640L128 213L128 384L896 704L128 1024L128 1194L1066 768L1066 640Z" ></glyph>
+<glyph unicode="&#61;" horiz-adv-x="1190" 
+d="M1066 896L85 896L85 1066L1066 1066L1066 896ZM1066 426L85 426L85 597L1066 
+597L1066 426Z" ></glyph>
+<glyph unicode="&#98;" horiz-adv-x="1147" 
+d="M298 0L128 0L128 1493L298 1493L298 987Q416 1152 600 1152 Q702 1152 792 
+1111 T942 995T1033 816T1066 592Q1066 309 928 154 T599 0Q407 0 298 181 ZM
+298 584Q298 394 352 309 Q442 170 593 170 Q716 170 806 272 T896 576Q896 
+784 810 882 T601 981Q478 981 388 879 T298 584Z" ></glyph>
+<glyph unicode="&#112;" horiz-adv-x="1147" 
+d="M128 -426L128 1109L298 1109L298 960Q357 1056 431 1104 T610 1152Q748 1152 854 
+1079 T1012 874T1066 584Q1066 415 1005 279 T830 72T587 0Q494 0 420 44 T
+298 154L298 -426L128 -426ZM298 566Q298 364 385 267 T594 170Q718 170 807 
+271 T896 581Q896 782 809 881 T602 981Q482 981 390 875 T298 566Z" ></glyph>
+<glyph unicode="&#41;" horiz-adv-x="680" 
+d="M213 -426L85 -426Q384 52 384 533 Q384 721 341 906 Q307 1056 246 1193 Q207 
+1283 85 1493 L213 1493Q394 1242 480 990 Q554 772 554 534 Q554 264 455 12 T
+213 -426Z" ></glyph>
+<glyph unicode="&#102;" horiz-adv-x="552" 
+d="M170 0L170 938L0 938L0 1109L170 1109L170 1210Q170 1306 188 1352 Q213 
+1415 276 1454 T456 1493Q532 1493 624 1474 L597 1314Q541 1322 491 1322 Q409 1322 
+375 1294 T341 1188L341 1109L554 1109L554 938L341 938L341 0L170 0Z" ></glyph>
+<glyph unicode="&#83;" horiz-adv-x="1360" 
+d="M85 469L256 469Q269 358 317 287 T467 172T696 128Q809 128 895 161 T1024 
+252T1066 384Q1066 460 1026 516 T889 610Q827 634 616 685 T327 781Q226 838 
+177 924 T128 1114Q128 1230 191 1330 T375 1483T644 1536Q806 1536 931 1485 T1122 
+1334T1194 1109L1024 1109Q1008 1236 917 1300 T650 1365Q466 1365 382 1297 T298 1132Q
+298 1049 358 995 Q416 941 664 885 T996 787Q1119 725 1178 631 T1237 414Q1237 
+292 1171 184 T981 17T702 -42Q506 -42 373 17 T164 197T89 317Z" ></glyph>
+<glyph unicode="&#109;" horiz-adv-x="1700" 
+d="M128 0L128 1109L298 1109L298 963Q348 1048 429 1100 T616 1152Q732 1152 807 
+1098 T912 950Q1040 1152 1245 1152 Q1406 1152 1492 1059 T1578 773L1578 0L1408 
+0L1408 706Q1408 820 1389 870 T1323 950T1210 981Q1093 981 1016 902 T938 651L938 
+0L768 0L768 728Q768 854 722 918 T572 981Q493 981 426 939 T329 815T298 
+581L298 0L128 0Z" ></glyph>
+<glyph unicode="&#115;" horiz-adv-x="1020" 
+d="M85 341L256 384Q270 280 338 225 T527 170Q649 170 708 219 T768 332Q768 
+391 710 424 Q670 448 534 483 Q352 536 278 574 T166 680T128 830Q128 904 
+158 968 T242 1074Q282 1106 350 1129 T498 1152Q616 1152 705 1116 T837 1018T896 
+853L725 810Q714 891 661 936 T511 981Q396 981 347 942 T298 850Q298 817 
+318 790 Q339 763 382 745 Q407 735 529 701 Q706 648 780 613 T896 514T938 
+352Q938 258 888 174 T741 45T524 0Q324 0 219 86 T85 341Z" ></glyph>
+</font>
+</defs>
+</svg>
+</div>
+<script type="application/xml" class="ODSGraphics" id="odsgraphics_GG3LH2YZ">
+<?xml version="1.0" encoding="utf-8" ?>
+<SASReport version="1.2" xmlns:style="http://www.sas.com/sasreportmodel/styles">
+<Data version="9.4m6">
+  <DataModel name="StatGraphDataModel">
+    <IQData type="2DEmbedded" name="StatGraphData">
+      <EmbeddedData>
+      <Variables>
+        <Variable name="Total length (>= 1000 bp)" label="Value" type="Numeric" valuesCount="100" encoding="Text"/>
+        <Variable name="density" label="Density" type="Numeric" valuesCount="100" encoding="Text"/>
+        <Variable name="mirror" label="mirror" type="Numeric" valuesCount="100" encoding="Text"/>
+      </Variables>
+        <ValuesList valuesCount="100">
+          <V>1000</V>
+          <V>1.0753347963189E-23</V>
+          <V>-1.0753347963189E-23</V>
+          <V>152505.05050505</V>
+          <V>0</V>
+          <V>0</V>
+          <V>304010.101010101</V>
+          <V>2.8951321439356E-23</V>
+          <V>-2.8951321439356E-23</V>
+          <V>455515.151515151</V>
+          <V>0</V>
+          <V>0</V>
+          <V>607020.202020202</V>
+          <V>3.3087224502121E-23</V>
+          <V>-3.3087224502121E-23</V>
+          <V>758525.252525252</V>
+          <V>3.3087224502121E-23</V>
+          <V>-3.3087224502121E-23</V>
+          <V>910030.303030303</V>
+          <V>9.1817047993386E-23</V>
+          <V>-9.1817047993386E-23</V>
+          <V>1061535.35353535</V>
+          <V>6.3486112013444E-23</V>
+          <V>-6.3486112013444E-23</V>
+          <V>1213040.4040404</V>
+          <V>0</V>
+          <V>0</V>
+          <V>1364545.45454545</V>
+          <V>0</V>
+          <V>0</V>
+          <V>1516050.5050505</V>
+          <V>0</V>
+          <V>0</V>
+          <V>1667555.55555555</V>
+          <V>0</V>
+          <V>0</V>
+          <V>1819060.6060606</V>
+          <V>3.1019272970738E-24</V>
+          <V>-3.1019272970738E-24</V>
+          <V>1970565.65656565</V>
+          <V>0</V>
+          <V>0</V>
+          <V>2122070.7070707</V>
+          <V>0</V>
+          <V>0</V>
+          <V>2273575.75757575</V>
+          <V>0</V>
+          <V>0</V>
+          <V>2425080.8080808</V>
+          <V>0</V>
+          <V>0</V>
+          <V>2576585.85858585</V>
+          <V>6.8672550610023E-24</V>
+          <V>-6.8672550610023E-24</V>
+          <V>2728090.9090909</V>
+          <V>6.5808518518415E-23</V>
+          <V>-6.5808518518415E-23</V>
+          <V>2879595.95959595</V>
+          <V>6.8966183571608E-23</V>
+          <V>-6.8966183571608E-23</V>
+          <V>3031101.01010101</V>
+          <V>9.6159746209289E-23</V>
+          <V>-9.6159746209289E-23</V>
+          <V>3182606.06060606</V>
+          <V>4.0635247591667E-23</V>
+          <V>-4.0635247591667E-23</V>
+          <V>3334111.11111111</V>
+          <V>6.16249556352E-23</V>
+          <V>-6.16249556352E-23</V>
+          <V>3485616.16161616</V>
+          <V>5.4076932545654E-23</V>
+          <V>-5.4076932545654E-23</V>
+          <V>3637121.21212121</V>
+          <V>1.0918784085699E-22</V>
+          <V>-1.0918784085699E-22</V>
+          <V>3788626.26262626</V>
+          <V>1.0334587778084E-22</V>
+          <V>-1.0334587778084E-22</V>
+          <V>3940131.31313131</V>
+          <V>6.98095200555E-23</V>
+          <V>-6.98095200555E-23</V>
+          <V>4091636.36363636</V>
+          <V>8.8198132813466E-23</V>
+          <V>-8.8198132813466E-23</V>
+          <V>4243141.41414141</V>
+          <V>3.7223127564886E-23</V>
+          <V>-3.7223127564886E-23</V>
+          <V>4394646.46464646</V>
+          <V>4.9010451293766E-23</V>
+          <V>-4.9010451293766E-23</V>
+          <V>4546151.51515151</V>
+          <V>1.1177278027122E-22</V>
+          <V>-1.1177278027122E-22</V>
+          <V>4697656.56565656</V>
+          <V>9.367820437163E-23</V>
+          <V>-9.367820437163E-23</V>
+          <V>4849161.61616161</V>
+          <V>9.6780131668704E-23</V>
+          <V>-9.6780131668704E-23</V>
+          <V>5000666.66666666</V>
+          <V>9.6780131668704E-23</V>
+          <V>-9.6780131668704E-23</V>
+          <V>5152171.71717171</V>
+          <V>2.2085722355165E-22</V>
+          <V>-2.2085722355165E-22</V>
+          <V>5303676.76767676</V>
+          <V>1.6750407404198E-22</V>
+          <V>-1.6750407404198E-22</V>
+          <V>5455181.81818181</V>
+          <V>9.9054878353225E-23</V>
+          <V>-9.9054878353225E-23</V>
+          <V>5606686.86868686</V>
+          <V>5.1285197978287E-23</V>
+          <V>-5.1285197978287E-23</V>
+          <V>5758191.91919191</V>
+          <V>1.9657608002925E-13</V>
+          <V>-1.9657608002925E-13</V>
+          <V>5909696.96969696</V>
+          <V>4.5352941460325E-10</V>
+          <V>-4.5352941460325E-10</V>
+          <V>6061202.02020202</V>
+          <V>8.6978224005585E-9</V>
+          <V>-8.6978224005585E-9</V>
+          <V>6212707.07070707</V>
+          <V>2.020466082682E-7</V>
+          <V>-2.020466082682E-7</V>
+          <V>6364212.12121212</V>
+          <V>6.8831823412946E-7</V>
+          <V>-6.8831823412946E-7</V>
+          <V>6515717.17171717</V>
+          <V>6.1537456583837E-7</V>
+          <V>-6.1537456583837E-7</V>
+          <V>6667222.22222222</V>
+          <V>6.3725323277275E-7</V>
+          <V>-6.3725323277275E-7</V>
+          <V>6818727.27272727</V>
+          <V>1.0572643588505E-6</V>
+          <V>-1.0572643588505E-6</V>
+          <V>6970232.32323232</V>
+          <V>1.2205557639039E-6</V>
+          <V>-1.2205557639039E-6</V>
+          <V>7121737.37373737</V>
+          <V>1.1018897945698E-6</V>
+          <V>-1.1018897945698E-6</V>
+          <V>7273242.42424242</V>
+          <V>4.3637225050928E-7</V>
+          <V>-4.3637225050928E-7</V>
+          <V>7424747.47474747</V>
+          <V>1.792348782246E-7</V>
+          <V>-1.792348782246E-7</V>
+          <V>7576252.52525252</V>
+          <V>1.0339672143718E-7</V>
+          <V>-1.0339672143718E-7</V>
+          <V>7727757.57575757</V>
+          <V>3.3401711260351E-8</V>
+          <V>-3.3401711260351E-8</V>
+          <V>7879262.62626262</V>
+          <V>2.6837108297974E-8</V>
+          <V>-2.6837108297974E-8</V>
+          <V>8030767.67676767</V>
+          <V>9.0365956670393E-9</V>
+          <V>-9.0365956670393E-9</V>
+          <V>8182272.72727272</V>
+          <V>1.1384067525012E-8</V>
+          <V>-1.1384067525012E-8</V>
+          <V>8333777.77777777</V>
+          <V>8.3354420540392E-9</V>
+          <V>-8.3354420540392E-9</V>
+          <V>8485282.82828282</V>
+          <V>4.5794009120325E-10</V>
+          <V>-4.5794009120325E-10</V>
+          <V>8636787.87878788</V>
+          <V>4.5313626244348E-10</V>
+          <V>-4.5313626244348E-10</V>
+          <V>8788292.92929293</V>
+          <V>5.9824206011999E-9</V>
+          <V>-5.9824206011999E-9</V>
+          <V>8939797.97979798</V>
+          <V>4.5293968636354E-10</V>
+          <V>-4.5293968636354E-10</V>
+          <V>9091303.03030303</V>
+          <V>3.9315215969252E-13</V>
+          <V>-3.9315215969252E-13</V>
+          <V>9242808.08080808</V>
+          <V>4.5313626244345E-10</V>
+          <V>-4.5313626244345E-10</V>
+          <V>9394313.13131313</V>
+          <V>6.4353602875635E-9</V>
+          <V>-6.4353602875635E-9</V>
+          <V>9545818.18181818</V>
+          <V>6.4962128120327E-9</V>
+          <V>-6.4962128120327E-9</V>
+          <V>9697323.23232324</V>
+          <V>5.0049525092384E-9</V>
+          <V>-5.0049525092384E-9</V>
+          <V>9848828.28282829</V>
+          <V>6.3912420648813E-9</V>
+          <V>-6.3912420648813E-9</V>
+          <V>10000333.3333333</V>
+          <V>2.3574321294393E-9</V>
+          <V>-2.3574321294393E-9</V>
+          <V>10151838.3838383</V>
+          <V>5.9870278538799E-9</V>
+          <V>-5.9870278538799E-9</V>
+          <V>10303343.4343434</V>
+          <V>4.5313626244343E-10</V>
+          <V>-4.5313626244343E-10</V>
+          <V>10454848.4848484</V>
+          <V>5.2320329227254E-10</V>
+          <V>-5.2320329227254E-10</V>
+          <V>10606353.5353535</V>
+          <V>1.4394859753255E-8</V>
+          <V>-1.4394859753255E-8</V>
+          <V>10757858.5858586</V>
+          <V>2.0316876342142E-8</V>
+          <V>-2.0316876342142E-8</V>
+          <V>10909363.6363636</V>
+          <V>4.4402680454024E-9</V>
+          <V>-4.4402680454024E-9</V>
+          <V>11060868.6868687</V>
+          <V>1.0996391039718E-8</V>
+          <V>-1.0996391039718E-8</V>
+          <V>11212373.7373737</V>
+          <V>1.2831209605124E-8</V>
+          <V>-1.2831209605124E-8</V>
+          <V>11363878.7878788</V>
+          <V>5.1635898447219E-9</V>
+          <V>-5.1635898447219E-9</V>
+          <V>11515383.8383838</V>
+          <V>1.6983812045758E-8</V>
+          <V>-1.6983812045758E-8</V>
+          <V>11666888.8888889</V>
+          <V>1.5692826287877E-8</V>
+          <V>-1.5692826287877E-8</V>
+          <V>11818393.9393939</V>
+          <V>1.731795922693E-8</V>
+          <V>-1.731795922693E-8</V>
+          <V>11969898.989899</V>
+          <V>1.4857210889485E-9</V>
+          <V>-1.4857210889485E-9</V>
+          <V>12121404.040404</V>
+          <V>1.2936376928356E-8</V>
+          <V>-1.2936376928356E-8</V>
+          <V>12272909.0909091</V>
+          <V>1.9387881789467E-8</V>
+          <V>-1.9387881789467E-8</V>
+          <V>12424414.1414141</V>
+          <V>1.8305442950354E-8</V>
+          <V>-1.8305442950354E-8</V>
+          <V>12575919.1919192</V>
+          <V>1.9752191878306E-8</V>
+          <V>-1.9752191878306E-8</V>
+          <V>12727424.2424242</V>
+          <V>1.8834382032552E-8</V>
+          <V>-1.8834382032552E-8</V>
+          <V>12878929.2929293</V>
+          <V>2.8758315929522E-9</V>
+          <V>-2.8758315929522E-9</V>
+          <V>13030434.3434343</V>
+          <V>5.9872244299598E-9</V>
+          <V>-5.9872244299598E-9</V>
+          <V>13181939.3939394</V>
+          <V>4.5293968636372E-10</V>
+          <V>-4.5293968636372E-10</V>
+          <V>13333444.4444444</V>
+          <V>6.1049100549166E-11</V>
+          <V>-6.1049100549166E-11</V>
+          <V>13484949.4949495</V>
+          <V>4.4909637223259E-9</V>
+          <V>-4.4909637223259E-9</V>
+          <V>13636454.5454545</V>
+          <V>1.8998851903958E-9</V>
+          <V>-1.8998851903958E-9</V>
+          <V>13787959.5959596</V>
+          <V>4.607252679915E-12</V>
+          <V>-4.607252679915E-12</V>
+          <V>13939464.6464646</V>
+          <V>3.5155176033503E-23</V>
+          <V>-3.5155176033503E-23</V>
+          <V>14090969.6969697</V>
+          <V>1.0132962503774E-23</V>
+          <V>-1.0132962503774E-23</V>
+          <V>14242474.7474747</V>
+          <V>3.4534790574088E-23</V>
+          <V>-3.4534790574088E-23</V>
+          <V>14393979.7979798</V>
+          <V>0</V>
+          <V>0</V>
+          <V>14545484.8484848</V>
+          <V>3.9291079096268E-23</V>
+          <V>-3.9291079096268E-23</V>
+          <V>14696989.8989899</V>
+          <V>3.0398887511323E-23</V>
+          <V>-3.0398887511323E-23</V>
+          <V>14848494.9494949</V>
+          <V>5.3766739815946E-24</V>
+          <V>-5.3766739815946E-24</V>
+          <V>15000000</V>
+          <V>2.6340532630985E-23</V>
+          <V>-2.6340532630985E-23</V>
+        </ValuesList>
+      </EmbeddedData>
+    </IQData>
+    <VarStats>
+      <VarStat name="Total length (>= 1000 bp)" modelName="StatGraphData" nobs="100" min="1000" max="15000000" />
+      <VarStat name="density" modelName="StatGraphData" nobs="100" min="0" max="1.2205557639039E-6" />
+      <VarStat name="mirror" modelName="StatGraphData" nobs="100" min="-1.2205557639039E-6" max="0" />
+    </VarStats>
+  </DataModel>
+</Data>
+  <View>
+    <StatGraph subPixel="on" height="480" width="640" designHeight="480" designWidth="640" renderer="java" style:style="StatGraphStyle" antiAlias="true" nBinsMax="10000" nXYBinsMax="100000" linePatternOBSMax="10000" totalCellMax="2000" sessionLocale="en_US" missingOption="." notesOption="true" collation="binary" version="9.4m6">
+      <LayoutOverlay>
+        <X2AxisOpts labelFitPolicy="Split">
+        </X2AxisOpts>
+        <XAxisOpts label="Total length (&gt;= 1000 bp) of Samples" labelFitPolicy="Split" type="LINEAR">
+        </XAxisOpts>
+        <YAxisOpts display="none" type="LINEAR">
+        </YAxisOpts>
+        <BandPlot x="StatGraphData#TOTAL LENGTH (&gt;= 1000 BP)" x_type="Variable" name="BAND" _stmt="BandPlot" display="OUTLINE FILL" legendLabel="Band" limitUpper="StatGraphData#DENSITY" limitLower="StatGraphData#MIRROR">
+        </BandPlot>
+      </LayoutOverlay>
+    </StatGraph>
+  </View>
+</SASReport>
+</script>
+</div>
+</div>
+</body>
+</html>
